@@ -9,8 +9,8 @@ class CreateServices < ActiveRecord::Migration
       t.integer :id_operator
       t.string :ubication
       t.string :destiny
-      t.integer :inventary_num
-      t.integer :keys_num
+      t.string :inventary_num
+      t.string :keys_num
       t.integer :id_assistance
 
       t.timestamps null: false
