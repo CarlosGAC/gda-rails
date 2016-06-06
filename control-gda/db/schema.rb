@@ -30,16 +30,17 @@ ActiveRecord::Schema.define(version: 20160601010945) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string   "date"
-    t.string   "hour"
-    t.integer  "id_operator"
-    t.integer  "id_car"
+    t.date     "date"
+    t.time     "hour"
     t.string   "client"
-    t.integer  "id_tow"
-    t.integer  "keys"
-    t.integer  "inventary_num"
+    t.integer  "id_car"
+    t.integer  "id_truck"
+    t.integer  "id_operator"
     t.string   "ubication"
     t.string   "destiny"
+    t.integer  "inventary_num"
+    t.integer  "keys_num"
+    t.integer  "id_assistance"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
