@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+operators_list = [
+  "Armando",
+  "Ruben",
+  "Abel",
+  "David"
+]
+
+operators_list.each do |name|
+  Operator.create( name: name)
+end

@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601010945) do
+ActiveRecord::Schema.define(version: 20160619213221) do
+
+  create_table "affiliates", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assistances", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.string   "company"
+    t.string   "record_number"
+    t.string   "company_user"
+    t.integer  "id_service"
+    t.integer  "id_affiliate"
+    t.string   "affiliate_plays"
+    t.string   "company_pays"
+    t.time     "contact_time"
+    t.time     "end_time"
+    t.string   "who_quoted"
+    t.text     "comments"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "cars", force: :cascade do |t|
     t.string   "brand"
@@ -38,8 +62,8 @@ ActiveRecord::Schema.define(version: 20160601010945) do
     t.integer  "id_operator"
     t.string   "ubication"
     t.string   "destiny"
-    t.integer  "inventary_num"
-    t.integer  "keys_num"
+    t.string   "inventary_num"
+    t.string   "keys_num"
     t.integer  "id_assistance"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -47,7 +71,7 @@ ActiveRecord::Schema.define(version: 20160601010945) do
 
   create_table "trucks", force: :cascade do |t|
     t.string   "type"
-    t.integer  "number"
+    t.string   "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
