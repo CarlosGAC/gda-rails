@@ -15,3 +15,14 @@ operators_list = [
 operators_list.each do |name|
   Operator.create( name: name)
 end
+
+trucks_list = [
+  ["1", "A", "Plataforma"],
+  ["2", "B", "Tiron"],
+  ["3", "C", "Tiron"],
+  ["4", "A", "Servicio de taxi"],
+]
+
+trucks_list.each do |number, classification, description|
+  Truck.create(number: number, classification: classification, description: description)
+end
