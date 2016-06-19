@@ -70,10 +70,11 @@ ActiveRecord::Schema.define(version: 20160619213221) do
   end
 
   create_table "trucks", force: :cascade do |t|
-    t.string   "type"
+    t.string   "classification"
     t.string   "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

@@ -1,0 +1,15 @@
+<%= form_for @truck do |f| %>
+  <div class="field">
+    <%= f.text_field :number, placeholder: "Numero" %>
+  </div>
+  <div class="field">
+    <%=  %>
+    <%= select_tag 'classification', options_for_select([['A', "A"], ['B', "B"], ['C', "C"], ['D', "D"]]) %>
+  </div>
+  <div class="field">
+    <%= text_area_tag 'description'%>
+  </div>
+  <div class="field">
+    <%= submit_tag("Ingresar Grua") %>
+  </div>
+<%end%>
