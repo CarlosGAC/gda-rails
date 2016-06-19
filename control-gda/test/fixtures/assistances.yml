@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-06-19
+  time: 2016-06-19 16:30:41
+  company: MyString
+  record_number: MyString
+  company_user: MyString
+  id_service: 1
+  id_affiliate: 1
+  affiliate_plays: MyString
+  company_pays: MyString
+  contact_time: 2016-06-19 16:30:41
+  end_time: 2016-06-19 16:30:41
+  who_quoted: MyString
+  comments: MyText
+
+two:
+  date: 2016-06-19
+  time: 2016-06-19 16:30:41
+  company: MyString
+  record_number: MyString
+  company_user: MyString
+  id_service: 1
+  id_affiliate: 1
+  affiliate_plays: MyString
+  company_pays: MyString
+  contact_time: 2016-06-19 16:30:41
+  end_time: 2016-06-19 16:30:41
+  who_quoted: MyString
+  comments: MyText
