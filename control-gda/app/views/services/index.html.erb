@@ -1,0 +1,17 @@
+<% @services.each do |s| %>
+  <tr>
+    <td><%= s.date %></td>
+    <td><%= s.hour %></td>
+    <td><%= s.client %></td>
+    <td><%= s.id_car %></td>
+    <td><%= s.id_truck %></td>
+    <td><%= s.id_operator %></td>
+    <td><%= s.ubication %></td>
+    <td><%= s.destiny %></td>
+    <td><%= s.inventary_num %></td>
+    <td><%= s.keys_num %></td>
+    <td><%= s.id_assistance %></td>
+    <br>
+  </tr>
+<% end %>
+<%= link_to 'Nuevo servicio', new_service_path %>
