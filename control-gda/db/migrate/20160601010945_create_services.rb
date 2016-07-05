@@ -12,7 +12,6 @@ class CreateServices < ActiveRecord::Migration
       t.string :inventary_num
       t.string :keys_num
       t.integer :id_assistance
-
       t.timestamps null: false
     end
   end

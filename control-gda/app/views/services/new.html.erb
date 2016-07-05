@@ -1,0 +1,26 @@
+<%= form_for @service do |s| %>
+  <div class="field">
+    Fecha: <%= s.date_field :date, :value => Time.now.strftime('%d-%m-%Y') %>
+  </div>
+  <div class="field">
+    Hora: <%= s.time_field :hour %>
+  </div>
+  <div class="field">
+    Nombre del cliente: <%= s.text_field :client, placeholder: "Cliente" %>
+  </div>
+  <div class="field">
+    Ubicación<%= s.text_field :ubication, placeholder: "Ubicación" %>
+  </div>
+  <div class="field">
+    Destino: <%= s.text_field :destiny, placeholder: "Destino" %>
+  </div>
+  <div class="field">
+    Número de inventario: <%= s.number_field :inventary_num %>
+  </div>
+  <div class="field">
+    Número de llaves: <%= s.number_field :keys_num %>
+  </div>
+  <div class="field">
+    <%= submit_tag("Registrar servicio") %>
+  </div>
+<%end%>
