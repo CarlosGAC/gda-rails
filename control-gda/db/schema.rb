@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619213221) do
+ActiveRecord::Schema.define(version: 20160713042508) do
 
   create_table "affiliates", force: :cascade do |t|
     t.string   "name"
@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(version: 20160619213221) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string   "brand"
-    t.string   "type"
-    t.string   "color"
-    t.string   "licence_plates"
-    t.string   "model"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "operators", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -57,17 +47,25 @@ ActiveRecord::Schema.define(version: 20160619213221) do
     t.date     "date"
     t.time     "hour"
     t.string   "client"
-    t.integer  "id_car"
-    t.integer  "id_truck"
-    t.integer  "id_operator"
     t.string   "ubication"
     t.string   "destiny"
     t.string   "inventary_num"
     t.string   "keys_num"
-    t.integer  "id_assistance"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "brand"
+    t.string   "car_type"
+    t.string   "color"
+    t.string   "licence_plates"
+    t.string   "model"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "operator_id"
+    t.integer  "truck_id"
+    t.integer  "assistance_id"
   end
+
+  add_index "services", ["assistance_id"], name: "index_services_on_assistance_id"
+  add_index "services", ["operator_id"], name: "index_services_on_operator_id"
+  add_index "services", ["truck_id"], name: "index_services_on_truck_id"
 
   create_table "trucks", force: :cascade do |t|
     t.string   "classification"

@@ -1,16 +1,18 @@
 <% @services.each do |s| %>
   <tr>
-    <td><%= s.date %></td>
-    <td><%= s.hour %></td>
-    <td><%= s.client %></td>
-    <td><%= s.id_car %></td>
-    <td><%= s.id_truck %></td>
-    <td><%= s.id_operator %></td>
-    <td><%= s.ubication %></td>
-    <td><%= s.destiny %></td>
-    <td><%= s.inventary_num %></td>
-    <td><%= s.keys_num %></td>
-    <td><%= s.id_assistance %></td>
+    <td>Fecha <%= s.date %></td>
+    <td>Hora <%= s.hour %></td>
+    <td>Cliente <%= s.client %></td>
+    <td>Grua <%= s.truck.number %></td>
+    <td>Operador <%= s.operator.name %></td>
+    <td>Ubicacion <%= s.ubication %></td>
+    <td>Destino <%= s.destiny %></td>
+    <td>#Inventario <%= s.inventary_num %></td>
+    <td>Marca <%= s.brand %></td>
+    <td>Tipo <%= s.car_type %></td>
+    <td>Modelo <%= s.model %></td>
+    <td>Color <%= s.color %></td>
+    <td>Placas <%= s.licence_plates %></td>
     <br>
   </tr>
 <% end %>

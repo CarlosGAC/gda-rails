@@ -4,14 +4,15 @@ class CreateServices < ActiveRecord::Migration
       t.date :date
       t.time :hour
       t.string :client
-      t.integer :id_car
-      t.integer :id_truck
-      t.integer :id_operator
       t.string :ubication
       t.string :destiny
       t.string :inventary_num
       t.string :keys_num
-      t.integer :id_assistance
+      t.string :brand
+      t.string :car_type
+      t.string :color
+      t.string :licence_plates
+      t.string :model
       t.timestamps null: false
     end
   end
