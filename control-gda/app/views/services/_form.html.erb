@@ -1,0 +1,47 @@
+<%= form_for @service do |s| %>
+  <div class="field">
+    Fecha: <%= s.date_field :date, :value => Time.now.strftime('%Y-%m-%d') %>
+  </div>
+  <div class="field">
+    Hora: <%= s.time_field :hour %>
+  </div>
+  <div class="field">
+    Nombre del cliente: <%= s.text_field :client, placeholder: "Cliente" %>
+  </div>
+  <div class="field">
+    Ubicación: <%= s.text_field :ubication, placeholder: "Ubicación" %>
+  </div>
+  <div class="field">
+    Destino: <%= s.text_field :destiny, placeholder: "Destino" %>
+  </div>
+  <div class="field">
+    Operador: <%= select_tag 'operator', options_from_collection_for_select(@operators, :id, :name)%>
+  </div>
+  <div class="field">
+    Grua: <%= select_tag 'truck', options_from_collection_for_select(@trucks, :id, :number)%>
+  </div>
+  <div class="field">
+    Número de inventario: <%= s.number_field :inventary_num %>
+  </div>
+  <div class="field">
+    Número de llaves: <%= s.number_field :keys_num %>
+  </div>
+  <div class="field">
+    Marca: <%= s.text_field :brand, placeholder: "Marca" %>
+  </div>
+  <div class="field">
+    Tipo: <%= s.text_field :car_type, placeholder: "Tipo" %>
+  </div>
+  <div class="field">
+    Modelo: <%= s.text_field :model, placeholder: "Modelo" %>
+  </div>
+  <div class="field">
+    Color: <%= s.text_field :color, placeholder: "Color" %>
+  </div>
+  <div class="field">
+    Placas: <%= s.text_field :licence_plates, placeholder: "Placas" %>
+  </div>
+  <div class="field">
+    <%= submit_tag("Registrar servicio") %>
+  </div>
+<%end%>

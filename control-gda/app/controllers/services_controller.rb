@@ -32,4 +32,35 @@ class ServicesController < ApplicationController
     redirect_to services_url
 
   end
+
+  def show
+    @service = Service.find(params[:id])
+  end
+
+  def edit
+    @service = Service.find(params[:id])
+    @operators = Operator.all
+    @trucks = Truck.all
+  end
+
+  def update
+    @service = Service.find(params[:id])
+    if @service.update(service_params)
+      redirect_to @service
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
+
+    redirect_to services_url
+  end
+
+
+  def service_params
+    params.require(:service).permit(:date,:hour,:client,:ubication,:destiny,:operator_id,:truck_id,:inventary_num,:brand,:car_type,:model,:color,:licence_plates,:keys_num)
+  end
 end

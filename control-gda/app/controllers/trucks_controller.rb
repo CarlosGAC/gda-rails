@@ -12,6 +12,5 @@ class TrucksController < ApplicationController
 
     @truck.save
     redirect_to trucks_url
-
   end
 end
