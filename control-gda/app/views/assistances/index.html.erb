@@ -1,0 +1,17 @@
+<% @assistances.each do |a| %>
+  <tr>
+    <td>Numero de asistencia: <%= a.id%> </td>
+    <td>Numero de expediente: <%= a.record_number%> </td>
+    <td>Quien autoriza: <%= a.company_user%> </td>
+    <td>Nombre del afiliado: <%= a.affiliate_name %> </td>
+    <td>Afiliado paga: <%= a.affiliate_pays %> </td>
+    <td>Compañia paga: <%= a.company_pays %> </td>
+    <td>Contacto: <%= a.contact_time %> </td>
+    <td>Termino: <%= a.end_time %> </td>
+    <td>Quien cotizo: <%= a.who_quoted %> </td>
+    <td>Comentarios: <%= a.comments %> </td>
+    <%= link_to 'Mostrar a detalle', a, method: :get %>
+    <br>
+  </tr>
+<% end %>
+<%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>

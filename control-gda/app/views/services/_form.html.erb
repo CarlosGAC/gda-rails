@@ -42,6 +42,9 @@
     Placas: <%= s.text_field :licence_plates, placeholder: "Placas" %>
   </div>
   <div class="field">
+    Numero de Asistencia: <%= s.number_field :assistance_id %>
+  </div>
+  <div class="field">
     <%= submit_tag("Registrar servicio") %>
   </div>
 <%end%>

@@ -25,7 +25,8 @@ class ServicesController < ApplicationController
       model: params[:service][:model],
       color: params[:service][:color],
       licence_plates: params[:service][:licence_plates],
-      keys_num: params[:service][:keys_num]
+      keys_num: params[:service][:keys_num],
+      assistance_id: params[:service][:assistance_id]
     )
     @service.save
 

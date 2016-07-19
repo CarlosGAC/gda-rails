@@ -13,28 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20160713042508) do
 
-  create_table "affiliates", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "assistances", force: :cascade do |t|
-    t.date     "date"
-    t.time     "time"
-    t.string   "company"
     t.string   "record_number"
     t.string   "company_user"
-    t.integer  "id_service"
-    t.integer  "id_affiliate"
-    t.string   "affiliate_plays"
+    t.string   "affiliate_name"
+    t.string   "affiliate_pays"
     t.string   "company_pays"
     t.time     "contact_time"
     t.time     "end_time"
     t.string   "who_quoted"
     t.text     "comments"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "operators", force: :cascade do |t|

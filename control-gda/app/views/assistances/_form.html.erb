@@ -1,0 +1,32 @@
+<%= form_for @assistance do |a| %>
+  <div class="field">
+    Numero de expediente: <%= a.text_field :record_number, placeholder: "Numero de Expediente" %>
+  </div>
+  <div class="field">
+    Quien autoriza: <%= a.text_field :company_user, placeholder: "Nombre del usuario" %>
+  </div>
+  <div class="field">
+    Nombre del afiliado: <%= a.text_field :affiliate_name %>
+  </div>
+  <div class="field">
+    Afiliado paga: <%= a.number_field :affiliate_pays %>
+  </div>
+  <div class="field">
+    Compañia paga: <%= a.number_field :company_pays%>
+  </div>
+  <div class="field">
+    Contacto: <%= a.time_field :contact_time%>
+  </div>
+  <div class="field">
+    Termino: <%= a.time_field :end_time%>
+  </div>
+  <div class="field">
+    Quien cotizo: <%= a.text_field :who_quoted, placeholder: "Quien cotizo" %>
+  </div>
+  <div class="field">
+    Comentarios: <%= a.text_field :comments, placeholder: "Comentarios" %>
+  </div>
+  <div class="field">
+    <%= submit_tag("Registrar asistencia") %>
+  </div>
+<%end%>
