@@ -22,3 +22,5 @@
 <td>Ubicacion <%= @assistance.service.ubication %></td>
 <td>Destino <%= @assistance.service.destiny %></td>
 <td>Comentarios: <%= @assistance.comments %> </td>
+<%= link_to 'Editar', edit_assistance_path(@assistance) %>
+<%= link_to 'Eliminar', @assistance, method: :delete %>

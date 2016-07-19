@@ -29,14 +29,28 @@ class AssistancesController < ApplicationController
   end
 
   def edit
-
+    @assistance = Assistance.find(params[:id])
   end
 
   def update
-
+    @assistance = Assistance.find(params[:id])
+    if @assistance.update(assistance_params)
+      redirect_to @assistance
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @assistance = Assistance.find(params[:id])
+    @assistance.destroy
 
+    redirect_to assistances_url
   end
+
+
+  def assistance_params
+    params.require(:assistance).permit(:record_number,:company_user,:affiliate_name,:affiliate_pays,:company_pays,:contact_time,:end_time,:who_quoted,:comments)
+  end
+  
 end
