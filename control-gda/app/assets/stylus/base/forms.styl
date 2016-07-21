@@ -1,38 +1,53 @@
 @import '../theme/color.styl'
 
+a
+  background-color $blue_button;
+  border-radius 10px;
+  color white;
+  display inline-block;
+  font-size 1.5em;
+  margin 25px;
+  // margin-top 50px;
+  // min-width 250px;
+  padding 14px 20px;
+  text-align center;
+  text-decoration none;
+  &:hover
+    background-color $blue_button_hover;
+
 button
+  color:white;
   background-color: $blue_button;
+  border: none;
+  border-radius: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
+  font-size: 14px;
   font-weight: 400;
-  border: none;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  color:white;
-  border-radius: 10px;
   &:hover
     background-color: $blue_button_hover;
 
 input[type=text]
   border:none;
+  border: 1px solid $blue_button;
   font-weight: 400;
   font-size: 1.4em;
-  border: 1px solid $bue_button;
   padding-left: 0.5em;
 
 input[type=submit]
+  color:white;
   background-color: $blue_button;
+  border: none;
+  border-radius: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
+  font-size: 16px;
   font-weight: 400;
-  border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  color:white;
-  border-radius: 10px;
   &:hover
     background-color: $blue_button_hover;

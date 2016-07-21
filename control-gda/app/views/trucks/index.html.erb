@@ -1,3 +1,7 @@
+<%= link_to 'Nueva Grua', new_truck_path %>
+
+<br>
+
 <% @trucks.each do |truck| %>
     <tr>
       <td><%= truck.number %></td>
@@ -6,4 +10,4 @@
     </tr>
 <% end %>
 
-<%= link_to 'Nueva Grua', new_truck_path %>
+

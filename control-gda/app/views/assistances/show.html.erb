@@ -1,16 +1,16 @@
 
 <td>Numero de asistencia: <%= @assistance.id%> </td>
-<td>Numero de servicio: <%= @assistance.service.id %>
+<td>Numero de servicio <%= @assistance.service.id %>
 <td>Compañia: <%= @assistance.service.client %>
-<td>Fecha: <%= @assistance.service.date %></td>
-<td>Hora: <%= @assistance.service.hour %></td>
+<td>Fecha <%= @assistance.service.date %></td>
+<td>Hora <%= @assistance.service.hour %></td>
 <td>Numero de expediente: <%= @assistance.record_number%> </td>
 <td>Quien autoriza: <%= @assistance.company_user%> </td>
-<td>Marca: <%= @assistance.service.brand %></td>
-<td>Tipo: <%= @assistance.service.car_type %></td>
-<td>Modelo: <%= @assistance.service.model %></td>
-<td>Color: <%= @assistance.service.color %></td>
-<td>Placas: <%= @assistance.service.licence_plates %></td>
+<td>Marca <%= @assistance.service.brand %></td>
+<td>Tipo <%= @assistance.service.car_type %></td>
+<td>Modelo <%= @assistance.service.model %></td>
+<td>Color <%= @assistance.service.color %></td>
+<td>Placas <%= @assistance.service.licence_plates %></td>
 <td>Nombre del afiliado: <%= @assistance.affiliate_name %> </td>
 <td>Afiliado paga: <%= @assistance.affiliate_pays %> </td>
 <td>Compañia paga: <%= @assistance.company_pays %> </td>

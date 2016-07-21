@@ -1,7 +1,12 @@
+<%= link_to 'Nuevo Operador', new_operator_path %>
+
+<br>
+
 <% @operators.each do |operator| %>
     <tr>
       <td><%= operator.name %></td>
     </tr>
 <% end %>
 
-<%= link_to 'Nuevo Operador', new_operator_path %>
+
+

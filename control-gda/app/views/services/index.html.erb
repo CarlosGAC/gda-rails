@@ -1,3 +1,7 @@
+<%= link_to 'Nuevo servicio', new_service_path %>
+
+<br>
+
 <% @services.each do |s| %>
   <tr>
     <td>Fecha <%= s.date %></td>
@@ -6,8 +10,9 @@
     <td>Operador <%= s.operator.name %></td>
     <td>Ubicacion <%= s.ubication %></td>
     <td>Destino <%= s.destiny %></td>
+    
     <%= link_to 'Mostrar a detalle', s, method: :get %>
     <br>
   </tr>
 <% end %>
-<%= link_to 'Nuevo servicio', new_service_path %>
+

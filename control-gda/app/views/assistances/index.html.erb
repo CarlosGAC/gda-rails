@@ -1,3 +1,7 @@
+<%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
+
+<br>
+
 <% @assistances.each do |a| %>
   <tr>
     <td>Numero de asistencia: <%= a.id%> </td>
@@ -14,4 +18,4 @@
     <br>
   </tr>
 <% end %>
-<%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
+

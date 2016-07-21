@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gruas Garcia de Alba</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  	<title>Gruas Garcia de Alba</title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
-  <section id="header"><%= image_tag("logo.png", id: "logo") %>
-    <h1 id="title" class="white">Gruas Garcia de Alba</h1>
-  </section>
-<%= yield %>
-
+  	<section id="header">
+      <%= link_to(image_tag("logo.png", id: "logo", :title => "Home"), "/",class: "index_logo") %><h1 id="title" class="white">Gruas Garcia de Alba</h1>
+  	</section>
+  	<div class="contenedor">
+  		<%= yield %>	
+  	</div>
+	
 </body>
 </html>
