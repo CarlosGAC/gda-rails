@@ -1,6 +1,7 @@
 class AssistancesController < ApplicationController
   def index
-    @assistances = Assistance.all
+    @q = Assistance.search(params[:q])
+    @assistance = @q.result(distinct: true)
   end
 
   def new

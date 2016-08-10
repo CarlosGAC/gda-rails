@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+      @q = Service.search(params[:q])
+      @service = @q.result(distinct: true)
   end
 
   def new

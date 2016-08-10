@@ -1,8 +1,22 @@
 <%= link_to 'Nuevo servicio', new_service_path %>
 
+<%= search_form_for @q do |f| %>
+
+<%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
+<br>
+<%= f.search_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
+Hasta
+<%= f.search_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
+<br>
+<%= f.submit "Buscar"%>
+<%end%>
+
 <br>
 
-<% @services.each do |s| %>
+    <tr>
+        <th><%= sort_link @q, :date, "Fecha" %></th>
+    </tr>
+  <% @service.each do |s| %>
   <tr>
     <td>Fecha <%= s.date %></td>
     <td>Hora <%= s.hour %></td>
@@ -15,4 +29,3 @@
     <br>
   </tr>
 <% end %>
-
