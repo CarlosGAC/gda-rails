@@ -1,7 +1,11 @@
 class ServicesController < ApplicationController
   def index
-      @q = Service.search(params[:q])
+    @q = Service.search(params[:q])
+    if params[:commit]
       @service = @q.result(distinct: true)
+    else
+      @service = Service.today()
+    end
   end
 
   def new

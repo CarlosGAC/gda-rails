@@ -3,6 +3,16 @@
 <%= search_form_for @q do |f| %>
 
 <%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
+<%= f.search_field :ubication_cont, placeholder: 'Ubicación' %>
+<%= f.search_field :destiny_cont, placeholder: 'Destino' %>
+<%= f.search_field :inventary_num_cont, placeholder: 'Número de inventario' %>
+<%= f.search_field :keys_num_cont, placeholder: 'Número de llaves' %>
+<%= f.search_field :brand_cont, placeholder: 'Marca' %>
+<%= f.search_field :car_type_cont, placeholder: 'Tipo' %>
+<%= f.search_field :color_cont, placeholder: 'Color' %>
+<%= f.search_field :licence_plates_cont, placeholder: 'Placas' %>
+<%= f.search_field :model_cont, placeholder: 'Modelo' %>
+
 <br>
 <%= f.search_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
 Hasta

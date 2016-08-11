@@ -3,8 +3,13 @@
 <%= search_form_for @q do |f| %>
 
 <%= f.search_field :record_number_cont, placeholder: 'Numero de expediente' %>
-<br>
+<%= f.search_field :company_user_cont, placeholder: 'Quien autoriza' %>
 <%= f.search_field :affiliate_name_cont, placeholder: 'Nombre de afiliado' %>
+<%= f.search_field :affiliate_pays_cont, placeholder: 'Afiliado paga' %>
+<%= f.search_field :company_pays_cont, placeholder: 'Compañia paga' %>
+<%= f.search_field :who_quoted_cont, placeholder: 'Quien cotizó' %>
+<br>
+
 <br>
 <%= f.submit "Buscar"%>
 <%end%>

@@ -1,7 +1,14 @@
 class AssistancesController < ApplicationController
   def index
     @q = Assistance.search(params[:q])
+    if params[:commit]
     @assistance = @q.result(distinct: true)
+  else 
+    # TO BE FIXED
+    #@assistance = Assistance.today()
+    @assistance = Assistance.all
+    end
+    
   end
 
   def new
