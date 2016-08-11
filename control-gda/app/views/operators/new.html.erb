@@ -1,9 +1,18 @@
 <%= form_for @operator do |f| %>
-  <div class="field">
+  <div class="left">
+  <ul>
+  <li><div class="field">
     <%= f.text_field :name, placeholder: "Nombre" %>
   </div>
-
-  <div class="field">
+</li>
+</ul>
+  </div>
+<div class="rigth">
+<ul>
+<li><div class="field">
     <%= submit_tag("Ingresar Operador") %>
   </div>
+</li>
+</ul>
+</div>
 <%end%>
