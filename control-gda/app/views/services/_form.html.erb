@@ -1,50 +1,113 @@
 <%= form_for @service do |s| %>
+<div class="list3">
   <div class="field">
-    Fecha: <%= s.date_field :date, :value => Time.now.strftime('%Y-%m-%d') %>
+    <div class="left">
+    <ul>
+    <li>Fecha:</li><li> <%= s.date_field :date, :value => Time.now.strftime('%Y-%m-%d') %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Hora: <%= s.time_field :hour %>
+    <div class="left">
+    <ul>
+    <li>Hora:</li><li> <%= s.time_field :hour %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Nombre del cliente: <%= s.text_field :client, placeholder: "Cliente" %>
+    <div class="left">
+    <ul>
+    <li>Nombre del cliente:</li><li> <%= s.text_field :client, placeholder: "Cliente" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Ubicación: <%= s.text_field :ubication, placeholder: "Ubicación" %>
+    <div class="left">
+    <ul>
+    <li>Ubicación: </li><li><%= s.text_field :ubication, placeholder: "Ubicación" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Destino: <%= s.text_field :destiny, placeholder: "Destino" %>
+    <div class="left">
+    <ul>
+    <li>Destino:</li><li> <%= s.text_field :destiny, placeholder: "Destino" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Operador: <%= select_tag 'operator', options_from_collection_for_select(@operators, :id, :name)%>
+    <div class="left">
+    <ul>
+    <li>Operador: </li><li><%= select_tag 'operator', options_from_collection_for_select(@operators, :id, :name)%></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Grua: <%= select_tag 'truck', options_from_collection_for_select(@trucks, :id, :number)%>
+    <div class="left">
+    <ul>
+    <li>Grua:</li><li> <%= select_tag 'truck', options_from_collection_for_select(@trucks, :id, :number)%></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Número de inventario: <%= s.number_field :inventary_num %>
+    <div class="left">
+    <ul>
+    <li>Número de inventario: </li><li><%= s.number_field :inventary_num %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Número de llaves: <%= s.number_field :keys_num %>
+    <div class="left">
+    <ul>
+    <li>Número de llaves: </li><li><%= s.number_field :keys_num %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Marca: <%= s.text_field :brand, placeholder: "Marca" %>
+    <div class="left">
+    <ul>
+    <li>Marca:</li><li> <%= s.text_field :brand, placeholder: "Marca" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Tipo: <%= s.text_field :car_type, placeholder: "Tipo" %>
+    <div class="left">
+    <ul>
+    <li>Tipo:</li><li> <%= s.text_field :car_type, placeholder: "Tipo" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Modelo: <%= s.text_field :model, placeholder: "Modelo" %>
+    <div class="left">
+    <ul>
+    <li>Modelo:</li><li> <%= s.text_field :model, placeholder: "Modelo" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Color: <%= s.text_field :color, placeholder: "Color" %>
+    <div class="left">
+    <ul>
+    <li>Color: </li><li><%= s.text_field :color, placeholder: "Color" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Placas: <%= s.text_field :licence_plates, placeholder: "Placas" %>
+    <div class="left">
+    <ul>
+    <li>Placas:</li><li> <%= s.text_field :licence_plates, placeholder: "Placas" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Numero de Asistencia: <%= s.number_field :assistance_id %>
+    <div class="left">
+    <ul>
+    <li>Numero de Asistencia: </li><li><%= s.number_field :assistance_id %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    <%= submit_tag("Registrar servicio") %>
+    <div class="left">
+    <ul><li><%= submit_tag("Registrar servicio") %></li></ul>
   </div>
+</div>
 <%end%>

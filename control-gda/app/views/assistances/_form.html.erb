@@ -1,32 +1,56 @@
 <%= form_for @assistance do |a| %>
+<div class="list3">
   <div class="field">
-    Numero de expediente: <%= a.text_field :record_number, placeholder: "Numero de Expediente" %>
+    <div class="left">
+    <ul><li>Numero de expediente:</li><li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %>
   </div>
   <div class="field">
-    Quien autoriza: <%= a.text_field :company_user, placeholder: "Nombre del usuario" %>
+    <div class="left">
+    <ul><li>Quien autoriza:</li><li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %>
   </div>
   <div class="field">
-    Nombre del afiliado: <%= a.text_field :affiliate_name %>
+    <div class="left">
+    <ul><li>Nombre del afiliado:</li><li> <%= a.text_field :affiliate_name %>
   </div>
   <div class="field">
-    Afiliado paga: <%= a.number_field :affiliate_pays %>
+    <div class="left">
+    <ul><li>Afiliado paga:</li><li> <%= a.number_field :affiliate_pays %>
   </div>
   <div class="field">
-    Compañia paga: <%= a.number_field :company_pays%>
+    <div class="left">
+    <ul><li>Compañia paga:</li><li> <%= a.number_field :company_pays%></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Contacto: <%= a.time_field :contact_time%>
+    <div class="left">
+    <ul><li>Contacto: </li><li><%= a.time_field :contact_time%></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Termino: <%= a.time_field :end_time%>
+    <div class="left">
+    <ul><li>Termino: </li><li><%= a.time_field :end_time%></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Quien cotizo: <%= a.text_field :who_quoted, placeholder: "Quien cotizo" %>
+    <div class="left">
+    <ul><li>Quien cotizo: </li><li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    Comentarios: <%= a.text_field :comments, placeholder: "Comentarios" %>
+    <div class="left">
+    <ul><li>Comentarios: </li><li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
+  </ul>
+  </div>
   </div>
   <div class="field">
-    <%= submit_tag("Registrar asistencia") %>
+    <div class="left">
+    <ul><li>
+    <%= submit_tag("Registrar asistencia") %></li>
+  </ul>
+  </div>
   </div>
 <%end%>
