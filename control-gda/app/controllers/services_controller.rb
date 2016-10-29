@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   def index
     @q = Service.search(params[:q])
     if params[:commit]
-      @service = @q.result(distinct: true)
+      @service = @q.result.includes(:assistance, :truck, :operator)
     else
       @service = Service.today()
     end

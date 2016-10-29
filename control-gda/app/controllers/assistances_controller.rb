@@ -2,13 +2,13 @@ class AssistancesController < ApplicationController
   def index
     @q = Assistance.search(params[:q])
     if params[:commit]
-    @assistance = @q.result(distinct: true)
-  else 
+    @assistance = @q.result.includes(:service)
+  else
     # TO BE FIXED
     #@assistance = Assistance.today()
     @assistance = Assistance.all
     end
-    
+
   end
 
   def new
@@ -60,5 +60,5 @@ class AssistancesController < ApplicationController
   def assistance_params
     params.require(:assistance).permit(:record_number,:company_user,:affiliate_name,:affiliate_pays,:company_pays,:contact_time,:end_time,:who_quoted,:comments)
   end
-  
+
 end

@@ -12,6 +12,8 @@
 <%= f.search_field :color_cont, placeholder: 'Color' %>
 <%= f.search_field :licence_plates_cont, placeholder: 'Placas' %>
 <%= f.search_field :model_cont, placeholder: 'Modelo' %>
+<%= f.search_field :operator_name_cont, placeholder: 'Operador' %>
+<%= f.search_field :truck_number_cont, placeholder: 'Grua' %>
 
 <br>
 <%= f.search_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
@@ -34,7 +36,7 @@ Hasta
     <td>Operador <%= s.operator.name %></td>
     <td>Ubicacion <%= s.ubication %></td>
     <td>Destino <%= s.destiny %></td>
-    
+
     <%= link_to 'Mostrar a detalle', s, method: :get %>
     <br>
   </tr>

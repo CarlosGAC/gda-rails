@@ -2,8 +2,8 @@ TODO: Fix en hora de servicios
 TODO: Mostrar alpha, para feedback por si requieren que sea una sola tabla para servicios y asistencias
 TODO: Mover queries al modelo (Buenas practicas en Rails)
 TODO: CSS para las busquedas
-TODO: Activar todos los campos para las busquedas
+**TODO: Activar todos los campos para las busquedas**
 TODO: En index de servicios y asistencias, solo mostrar los del dia
-TODO: Testear queries para dejarlas como case insensitive
+**TODO: Testear queries para dejarlas como case insensitive**
 TODO: Exportacion a PDF de queries
 TODO: CSS de tablas en index
