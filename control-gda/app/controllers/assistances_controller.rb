@@ -4,9 +4,7 @@ class AssistancesController < ApplicationController
     if params[:commit]
     @assistance = @q.result.includes(:service)
   else
-    # TO BE FIXED
-    #@assistance = Assistance.today()
-    @assistance = Assistance.all
+    @assistance = Assistance.today()
     end
 
   end

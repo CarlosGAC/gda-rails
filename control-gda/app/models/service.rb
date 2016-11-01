@@ -4,6 +4,6 @@ class Service < ActiveRecord::Base
   belongs_to :assistance
 
   def self.today()
-  	where('date == ?', Date.today)
+  	where(date: Date.today)
   end
 end
