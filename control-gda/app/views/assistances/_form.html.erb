@@ -2,55 +2,82 @@
 <div class="list3">
   <div class="field">
     <div class="left">
-    <ul><li>Numero de expediente:</li><li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %>
+      <ul>
+        <li>Numero de expediente:</li>
+        <li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Quien autoriza:</li><li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %>
+      <ul>
+        <li>Quien autoriza:</li>
+        <li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Nombre del afiliado:</li><li> <%= a.text_field :affiliate_name %>
+      <ul>
+        <li>Nombre del afiliado:</li>
+        <li> <%= a.text_field :affiliate_name %></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Afiliado paga:</li><li> <%= a.number_field :affiliate_pays %>
+      <ul>
+        <li>Afiliado paga:</li>
+        <li> <%= a.number_field :affiliate_pays %></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Compañia paga:</li><li> <%= a.number_field :company_pays%></li>
-  </ul>
-  </div>
-  </div>
-  <div class="field">
-    <div class="left">
-    <ul><li>Contacto: </li><li><%= a.time_field :contact_time%></li>
-  </ul>
-  </div>
+      <ul>
+        <li>Compañia paga:</li>
+        <li> <%= a.number_field :company_pays%></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Termino: </li><li><%= a.time_field :end_time%></li>
-  </ul>
-  </div>
-  </div>
-  <div class="field">
-    <div class="left">
-    <ul><li>Quien cotizo: </li><li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
-  </ul>
-  </div>
+      <ul>
+        <li>Contacto: </li>
+        <li><%= a.time_field :contact_time%></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>Comentarios: </li><li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
-  </ul>
-  </div>
+      <ul>
+        <li>Termino: </li>
+        <li><%= a.time_field :end_time%></li>
+      </ul>
+    </div>
   </div>
   <div class="field">
     <div class="left">
-    <ul><li>
-    <%= submit_tag("Registrar asistencia") %></li>
-  </ul>
+      <ul>
+        <li>Quien cotizo: </li>
+        <li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
+      </ul>
+    </div>
   </div>
+  <div class="field">
+    <div class="left">
+      <ul>
+        <li>Comentarios: </li>
+        <li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
+      </ul>
+    </div>
   </div>
+  <div class="field">
+    <div class="left">
+      <ul>
+        <li><%= submit_tag("Registrar asistencia") %></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <%end%>

@@ -29,18 +29,19 @@
 <br>
 
 <% @assistance.each do |a| %>
-  <tr>
-    <td>Numero de asistencia: <%= a.id%> </td>
-    <td>Numero de expediente: <%= a.record_number%> </td>
-    <td>Quien autoriza: <%= a.company_user%> </td>
-    <td>Nombre del afiliado: <%= a.affiliate_name %> </td>
-    <td>Afiliado paga: <%= a.affiliate_pays %> </td>
-    <td>Compañia paga: <%= a.company_pays %> </td>
-    <td>Contacto: <%= a.contact_time %> </td>
-    <td>Termino: <%= a.end_time %> </td>
-    <td>Quien cotizo: <%= a.who_quoted %> </td>
-    <td>Comentarios: <%= a.comments %> </td>
-    <%= link_to 'Mostrar a detalle', a, method: :get %>
-    <br>
-  </tr>
+<div class="S_A">
+  <div class="campo_data">Numero de asistencia: </div><div class="campo_data2"> <%= a.id%></div><br>
+  <div class="campo_data">Numero de expediente: </div><div class="campo_data2"> <%= a.record_number%></div><br>
+  <div class="campo_data">Quien autoriza: </div><div class="campo_data2"> <%= a.company_user%></div><br>
+  <div class="campo_data">Nombre del afiliado: </div><div class="campo_data2"> <%= a.affiliate_name %></div><br>
+  <div class="campo_data">Afiliado paga: </div><div class="campo_data2"> <%= a.affiliate_pays %></div><br>
+  <div class="campo_data">Compañia paga: </div><div class="campo_data2"> <%= a.company_pays %></div><br>
+  <div class="campo_data">Contacto: </div><div class="campo_data2"> <%= a.contact_time %></div><br>
+  <div class="campo_data">Termino: </div><div class="campo_data2"> <%= a.end_time %></div><br>
+  <div class="campo_data">Quien cotizo: </div><div class="campo_data2"> <%= a.who_quoted %></div><br>
+  <div class="campo_data">Comentarios: </div><div class="campo_data2"> <%= a.comments %></div><br>
+
+  <div class="detail"><%= link_to 'Mostrar a detalle', a, method: :get %></div>
+  <br>
+</div>
 <% end %>

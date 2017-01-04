@@ -358,18 +358,18 @@ li {
 .service_search input {
   margin-top: 0.5em;
 }
-.s_data,
+.campo_data,
 .s_data2 {
   padding-top: 0.2em;
 }
-.s_data {
+.campo_data {
   border-right: solid;
   border-width: 1px;
   display: inline-block;
   padding-right: 2.5%;
   width: 100px;
 }
-.s_data2 {
+.campo_data2 {
   display: inline-block;
   padding-left: 2.5%;
   min-width: 200px;
@@ -378,6 +378,6 @@ li {
   font-size: 1em;
   padding: 7px 10px;
 }
-.sections {
+.S_A {
   display: inline-block;
 }
