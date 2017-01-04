@@ -381,3 +381,7 @@ li {
 .S_A {
   display: inline-block;
 }
+.mas_detalles p {
+  font-size: 1.5em;
+  margin: 6px 0;
+}

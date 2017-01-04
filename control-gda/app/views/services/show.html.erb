@@ -1,19 +1,21 @@
-<tr>
-  <td>Numero de servicio <%= @service.id %>
-  <td>Fecha <%= @service.date %></td>
-  <td>Hora <%= @service.hour %></td>
-  <td>Cliente <%= @service.client %></td>
-  <td>Grua <%= @service.truck.number %></td>
-  <td>Operador <%= @service.operator.name %></td>
-  <td>Ubicacion <%= @service.ubication %></td>
-  <td>Destino <%= @service.destiny %></td>
-  <td>#Inventario <%= @service.inventary_num %></td>
-  <td>Marca <%= @service.brand %></td>
-  <td>Tipo <%= @service.car_type %></td>
-  <td>Modelo <%= @service.model %></td>
-  <td>Color <%= @service.color %></td>
-  <td>Placas <%= @service.licence_plates %></td>
+<div class="mas_detalles">
+  <p>Numero de servicio: <%= @service.id %></p>
+  <p>Fecha: <%= @service.date %></p>
+  <p>Hora: <%= @service.hour %></p>
+  <p>Cliente: <%= @service.client %></p>
+  <p>Grua: <%= @service.truck.number %></p>
+  <p>Operador: <%= @service.operator.name %></p>
+  <p>Ubicacion: <%= @service.ubication %></p>
+  <p>Destino: <%= @service.destiny %></p>
+  <p>#Inventario: <%= @service.inventary_num %></p>
+  <p>Marca: <%= @service.brand %></p>
+  <p>Tipo: <%= @service.car_type %></p>
+  <p>Modelo: <%= @service.model %></p>
+  <p>Color: <%= @service.color %></p>
+  <p>Placas: <%= @service.licence_plates %></p>
   <%= link_to 'Editar', edit_service_path(@service) %>
   <%= link_to 'Eliminar', @service, method: :delete %>
-  <br>
-</tr>
+
+</div>
+
+<br>
