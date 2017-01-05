@@ -29,21 +29,17 @@ Hasta
     <th><%= sort_link @q, :date, "Fecha" %></th>
 </tr>
 <br>
+
 <% @service.each do |s| %>
-<div class="sections">
-  <div class="s_data">Fecha: </div><div class="s_data2"> <%= s.date %></div><br>
-  <div class="s_data">Hora: </div><div class="s_data2"> <%= s.hour %></div><br>
+<div class="S_A">
+  <div class="campo_data">Fecha: </div><div class="campo_data2"> <%= s.date %></div><br>
+  <div class="campo_data">Hora: </div><div class="campo_data2"> <%= s.hour %></div><br>
+  <div class="campo_data">Cliente: </div><div class="campo_data2"> <%= s.client %></div><br>
+  <div class="campo_data">Operador: </div><div class="campo_data2"> <%= s.operator.name %></div><br>
+  <div class="campo_data">Ubicacion: </div><div class="campo_data2"> <%= s.ubication %></div><br>
+  <div class="campo_data">Destino: </div><div class="campo_data2"> <%= s.destiny %></div><br>
 
-  <div class="s_data">Cliente: </div><div class="s_data2"> <%= s.client %></div><br>
-
-  <div class="s_data">Operador: </div><div class="s_data2"> <%= s.operator.name %></div><br>
-
-  <div class="s_data">Ubicacion: </div><div class="s_data2"> <%= s.ubication %></div><br>
-
-  <div class="s_data">Destino: </div><div class="s_data2"> <%= s.destiny %></div><br>
-  
   <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %></div>
-  
   <br>
 
 </div>
