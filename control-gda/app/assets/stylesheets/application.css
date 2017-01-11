@@ -344,18 +344,27 @@ textarea {
 .list3 ul {
   list-style: none;
   margin-left: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.list3 li {
+  min-width: 210px;
 }
 .list3 ul,
 li {
   float: left;
   font-size: 1.2em;
-  padding-right: 1.5em;
-  padding-top: 0.2em;
 }
-.service_search input[type=submit] {
+.list3 li input {
+  font-size: 1em;
+  max-width: 250px;
+}
+.service_search input[type=submit],
+.assistance_search input[type=submit] {
   margin: 25px;
 }
-.service_search input {
+.service_search input,
+.assistance_search input {
   margin-top: 0.5em;
 }
 .campo_data,
