@@ -1,6 +1,6 @@
 "use strict";
 
-function initMap() {
+window.initMap = function() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 19.6893946, lng: -103.4687178},
