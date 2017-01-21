@@ -3,10 +3,65 @@
 window.initMap = function() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 19.6893946, lng: -103.4687178},
-          zoom: 13
+          center: {lat: 19.8798982, lng: -103.6052334},
+          zoom: 9
+
         });
-      }
+
+
+var infowindow = new google.maps.InfoWindow({
+  content: ''
+});
+var marcadores = [{
+  position: {
+    lat:19.6883289,
+    lng: -103.4696257
+  },
+  contenido: '<h3>Ubicacion Actual</h3>'+ '<h3>Ciudad Guzman</h3>' + 'Kilometro 86'
+}, {
+  position: {
+    lat: 19.4335231,
+    lng: -103.4949645
+  },
+  contenido: '<h3>Caseta a Tonila</h3>'+ 'Kilometro 129'
+},
+{
+ position: {
+   lat: 19.879142,
+   lng: -103.5193104
+ },
+ contenido: '<h3>Sayula/Usmajac</h3>'+ 'Kilometro 65'
+},
+{
+ position: {
+   lat: 19.933248,
+   lng: -103.530056
+ },
+ contenido: '<h3>Caseta Atoyac</h3>'+ 'Kilometro 59'
+},
+{
+ position: {
+   lat: 20.372907,
+   lng: -103.576236
+ },
+ contenido: '<h3>Caseta Acatlan</h3>'+ 'Kilometro 7'
+}];
+for (var i = 0, j = marcadores.length; i < j; i++) {
+  var contenido = marcadores[i].contenido;
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(marcadores[i].position.lat, marcadores[i].position.lng),
+    map: map
+  });
+  (function(marker, contenido) {
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(contenido);
+      infowindow.open(map, marker);
+    });
+  })(marker, contenido);
+}
+}
+
+      //acatlan, sayula, san marcos
 
 /*var map;
 window.initMap = function() {
