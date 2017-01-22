@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  
+  #Encriptacion
   require "bcrypt"
   before_create :set_encryption_password
 

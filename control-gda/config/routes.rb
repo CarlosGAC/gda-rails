@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :users
+  use_doorkeeper
   root 'welcome#index'
+
+  resources :users
 
   resources :services
 
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :map
 
-  #============= API =============
+  #============= API =============#
   namespace :api, defaults: {format:"json"} do
     resources :services, controller: :services, only: [:index]
   end
