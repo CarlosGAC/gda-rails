@@ -16,9 +16,9 @@
 <%= f.search_field :truck_number_cont, placeholder: 'Grua' %>
 
 <br>
-<%= f.search_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
+<%= f.date_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
 Hasta
-<%= f.search_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
+<%= f.date_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
 <br>
 <%= f.submit "Buscar"%>
 <%end%>
