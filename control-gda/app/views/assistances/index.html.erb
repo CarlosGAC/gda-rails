@@ -1,47 +1,47 @@
-<%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
+<div class="assistances-contenedor">
+  <%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
 
-<%= search_form_for @q do |f| %>
+  <%= search_form_for @q do |f| %>
 
-<%= f.search_field :record_number_cont, placeholder: 'Numero de expediente' %>
-<%= f.search_field :company_user_cont, placeholder: 'Quien autoriza' %>
-<%= f.search_field :affiliate_name_cont, placeholder: 'Nombre de afiliado' %>
-<%= f.search_field :affiliate_pays_cont, placeholder: 'Afiliado paga' %>
-<%= f.search_field :company_pays_cont, placeholder: 'Compañia paga' %>
-<%= f.search_field :who_quoted_cont, placeholder: 'Quien cotizó' %>
-<%= f.search_field :service_client_cont, placeholder: 'Nombre del cliente' %>
-<%= f.search_field :service_ubication_cont, placeholder: 'Ubicación' %>
-<%= f.search_field :service_destiny_cont, placeholder: 'Destino' %>
-<%= f.search_field :service_inventary_num_cont, placeholder: 'Número de inventario' %>
-<%= f.search_field :service_keys_num_cont, placeholder: 'Número de llaves' %>
-<%= f.search_field :service_brand_cont, placeholder: 'Marca' %>
-<%= f.search_field :service_car_type_cont, placeholder: 'Tipo' %>
-<%= f.search_field :service_color_cont, placeholder: 'Color' %>
-<%= f.search_field :service_licence_plates_cont, placeholder: 'Placas' %>
-<%= f.search_field :service_model_cont, placeholder: 'Modelo' %>
-<%= f.search_field :service_operator_name_cont, placeholder: 'Operador' %>
-<%= f.search_field :service_truck_number_cont, placeholder: 'Grua' %>
-<br>
+  <%= f.search_field :record_number_cont, placeholder: 'Numero de expediente' %>
+  <%= f.search_field :company_user_cont, placeholder: 'Quien autoriza' %>
+  <%= f.search_field :affiliate_name_cont, placeholder: 'Nombre de afiliado' %>
+  <%= f.search_field :affiliate_pays_cont, placeholder: 'Afiliado paga' %>
+  <%= f.search_field :company_pays_cont, placeholder: 'Compañia paga' %>
+  <%= f.search_field :who_quoted_cont, placeholder: 'Quien cotizó' %>
+  <%= f.search_field :service_client_cont, placeholder: 'Nombre del cliente' %>
+  <%= f.search_field :service_ubication_cont, placeholder: 'Ubicación' %>
+  <%= f.search_field :service_destiny_cont, placeholder: 'Destino' %>
+  <%= f.search_field :service_inventary_num_cont, placeholder: 'Número de inventario' %>
+  <%= f.search_field :service_keys_num_cont, placeholder: 'Número de llaves' %>
+  <%= f.search_field :service_brand_cont, placeholder: 'Marca' %>
+  <%= f.search_field :service_car_type_cont, placeholder: 'Tipo' %>
+  <%= f.search_field :service_color_cont, placeholder: 'Color' %>
+  <%= f.search_field :service_licence_plates_cont, placeholder: 'Placas' %>
+  <%= f.search_field :service_model_cont, placeholder: 'Modelo' %>
+  <%= f.search_field :service_operator_name_cont, placeholder: 'Operador' %>
+  <%= f.search_field :service_truck_number_cont, placeholder: 'Grua' %>
 
-<br>
-<%= f.submit "Buscar"%>
-<%end%>
+  <%= f.submit "Buscar"%>
+  <%end%>
 
-<br>
+  <div class="resultado-assistances">
+    <% @assistance.each do |a| %>
+    <div class="S_A">
+      <div class="campo_data">Numero de asistencia: </div><div class="campo_data2"> <%= a.id%></div>
+      <div class="campo_data">Numero de expediente: </div><div class="campo_data2"> <%= a.record_number%></div>
+      <div class="campo_data">Quien autoriza: </div><div class="campo_data2"> <%= a.company_user%></div>
+      <div class="campo_data">Nombre del afiliado: </div><div class="campo_data2"> <%= a.affiliate_name %></div>
+      <div class="campo_data">Afiliado paga: </div><div class="campo_data2"> <%= a.affiliate_pays %></div>
+      <div class="campo_data">Compañia paga: </div><div class="campo_data2"> <%= a.company_pays %></div>
+      <div class="campo_data">Contacto: </div><div class="campo_data2"> <%= a.contact_time %></div>
+      <div class="campo_data">Termino: </div><div class="campo_data2"> <%= a.end_time %></div>
+      <div class="campo_data">Quien cotizo: </div><div class="campo_data2"> <%= a.who_quoted %></div>
+      <div class="campo_data">Comentarios: </div><div class="campo_data2"> <%= a.comments %></div>
 
-<% @assistance.each do |a| %>
-<div class="S_A">
-  <div class="campo_data">Numero de asistencia: </div><div class="campo_data2"> <%= a.id%></div><br>
-  <div class="campo_data">Numero de expediente: </div><div class="campo_data2"> <%= a.record_number%></div><br>
-  <div class="campo_data">Quien autoriza: </div><div class="campo_data2"> <%= a.company_user%></div><br>
-  <div class="campo_data">Nombre del afiliado: </div><div class="campo_data2"> <%= a.affiliate_name %></div><br>
-  <div class="campo_data">Afiliado paga: </div><div class="campo_data2"> <%= a.affiliate_pays %></div><br>
-  <div class="campo_data">Compañia paga: </div><div class="campo_data2"> <%= a.company_pays %></div><br>
-  <div class="campo_data">Contacto: </div><div class="campo_data2"> <%= a.contact_time %></div><br>
-  <div class="campo_data">Termino: </div><div class="campo_data2"> <%= a.end_time %></div><br>
-  <div class="campo_data">Quien cotizo: </div><div class="campo_data2"> <%= a.who_quoted %></div><br>
-  <div class="campo_data">Comentarios: </div><div class="campo_data2"> <%= a.comments %></div><br>
+      <div class="detail"><%= link_to 'Mostrar a detalle', a, method: :get %></div>
 
-  <div class="detail"><%= link_to 'Mostrar a detalle', a, method: :get %></div>
-  <br>
+    </div>
+    <% end %>
+  </div>
 </div>
-<% end %>

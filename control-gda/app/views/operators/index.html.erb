@@ -1,14 +1,13 @@
-<%= link_to 'Nuevo Operador', new_operator_path %>
 
-<br>
+<div class="operators-contenedor">
+  <%= link_to 'Nuevo Operador', new_operator_path %>
 
+  <% @operators.each do |operator| %>
+  <div class="list1">
+      <ul>
+        <li><%= operator.name %></td>
+      </ul>
 
-<% @operators.each do |operator| %>
-<div class="list1">
-    <ul>
-      <li><%= operator.name %></td>
-    </ul>
-    <br>
+  </div>
+  <% end %>
 </div>
-<% end %>
-<br><br><br>

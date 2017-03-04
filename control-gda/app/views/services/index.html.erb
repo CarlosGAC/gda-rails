@@ -1,46 +1,45 @@
-<%= link_to 'Nuevo servicio', new_service_path %>
+<div class="services-contenedor">
+  <%= link_to 'Nuevo servicio', new_service_path %>
 
-<%= search_form_for @q do |f| %>
+  <%= search_form_for @q do |f| %>
 
-<%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
-<%= f.search_field :ubication_cont, placeholder: 'Ubicación' %>
-<%= f.search_field :destiny_cont, placeholder: 'Destino' %>
-<%= f.search_field :inventary_num_cont, placeholder: 'Número de inventario' %>
-<%= f.search_field :keys_num_cont, placeholder: 'Número de llaves' %>
-<%= f.search_field :brand_cont, placeholder: 'Marca' %>
-<%= f.search_field :car_type_cont, placeholder: 'Tipo' %>
-<%= f.search_field :color_cont, placeholder: 'Color' %>
-<%= f.search_field :licence_plates_cont, placeholder: 'Placas' %>
-<%= f.search_field :model_cont, placeholder: 'Modelo' %>
-<%= f.search_field :operator_name_cont, placeholder: 'Operador' %>
-<%= f.search_field :truck_number_cont, placeholder: 'Grua' %>
+  <%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
+  <%= f.search_field :ubication_cont, placeholder: 'Ubicación' %>
+  <%= f.search_field :destiny_cont, placeholder: 'Destino' %>
+  <%= f.search_field :inventary_num_cont, placeholder: 'Número de inventario' %>
+  <%= f.search_field :keys_num_cont, placeholder: 'Número de llaves' %>
+  <%= f.search_field :brand_cont, placeholder: 'Marca' %>
+  <%= f.search_field :car_type_cont, placeholder: 'Tipo' %>
+  <%= f.search_field :color_cont, placeholder: 'Color' %>
+  <%= f.search_field :licence_plates_cont, placeholder: 'Placas' %>
+  <%= f.search_field :model_cont, placeholder: 'Modelo' %>
+  <%= f.search_field :operator_name_cont, placeholder: 'Operador' %>
+  <%= f.search_field :truck_number_cont, placeholder: 'Grua' %>
 
-<br>
-<%= f.date_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
-Hasta
-<%= f.date_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
-<br>
-<%= f.submit "Buscar"%>
-<%end%>
+  <%= f.date_field :date_gteq, placeholder: 'Fecha inicial', :id => 'df_start' %>
+  Hasta
+  <%= f.date_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
 
-<br>
+  <%= f.submit "Buscar"%>
+  <%end%>
 
-<tr>
+  <tr>
     <th><%= sort_link @q, :date, "Fecha" %></th>
-</tr>
-<br>
+  </tr>
 
-<% @service.each do |s| %>
-<div class="S_A">
-  <div class="campo_data">Fecha: </div><div class="campo_data2"> <%= s.date %></div><br>
-  <div class="campo_data">Hora: </div><div class="campo_data2"> <%= s.hour %></div><br>
-  <div class="campo_data">Cliente: </div><div class="campo_data2"> <%= s.client %></div><br>
-  <div class="campo_data">Operador: </div><div class="campo_data2"> <%= s.operator.name %></div><br>
-  <div class="campo_data">Ubicacion: </div><div class="campo_data2"> <%= s.ubication %></div><br>
-  <div class="campo_data">Destino: </div><div class="campo_data2"> <%= s.destiny %></div><br>
+  <div class="resultado-assistances">
+    <% @service.each do |s| %>
+    <div class="S_A">
+      <div class="campo_data">Fecha: </div><div class="campo_data2"> <%= s.date %></div>
+      <div class="campo_data">Hora: </div><div class="campo_data2"> <%= s.hour %></div>
+      <div class="campo_data">Cliente: </div><div class="campo_data2"> <%= s.client %></div>
+      <div class="campo_data">Operador: </div><div class="campo_data2"> <%= s.operator.name %></div>
+      <div class="campo_data">Ubicacion: </div><div class="campo_data2"> <%= s.ubication %></div>
+      <div class="campo_data">Destino: </div><div class="campo_data2"> <%= s.destiny %></div>
 
-  <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %></div>
-  <br>
+      <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %></div>
 
-</div>
-<% end %>
+    </div>
+    <% end %>
+  </div>
+  </div>

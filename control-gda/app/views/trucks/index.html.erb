@@ -1,17 +1,17 @@
-<%= link_to 'Nueva Grua', new_truck_path %>
 
-<br>
+<div class="trucks-contenedor">
 
-<% @trucks.each do |truck| %>
-  <div class="list1">
-    <ul>
-      <li><%= truck.number %></li>
-      <li><%= truck.classification %></li>
-      <li><%= truck.description %></li>
-    </ul>
-    <br><br>
-  </div>
+  <%= link_to 'Nueva Grua', new_truck_path %>
+
+  <% @trucks.each do |truck| %>
+    <div class="list1">
+      <ul>
+        <li><%= truck.number %></li>
+        <li><%= truck.classification %> : </li>
+        <li><%= truck.description %></li>
+      </ul>
+    </div>
 
 
-<% end %>
-<br><br><br>
+  <% end %>
+</div>
