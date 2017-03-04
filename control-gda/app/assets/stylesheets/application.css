@@ -193,9 +193,8 @@ a {
   background-color: #2949b0;
   border-radius: 10px;
   color: #fff;
-  display: inline-block;
   font-size: 1.5em;
-  margin: 25px;
+  margin: 5px 5px 5px 0;
   padding: 14px 20px;
   text-align: center;
   text-decoration: none;
@@ -219,13 +218,15 @@ button {
 button:hover {
   background-color: #1a2f73;
 }
+input {
+  margin: 5px 5px 5px 0;
+}
 input[type=text] {
   border: none;
   border: 1px solid #2949b0;
   font-weight: 400;
   font-size: 1.4em;
   padding-left: 0.5em;
-  margin-top: 0.5em;
 }
 input[type=submit] {
   color: #fff;
@@ -242,6 +243,9 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   background-color: #1a2f73;
+}
+input[type=time] {
+  max-width: 100px;
 }
 #header {
   background-color: #213164;
@@ -291,8 +295,62 @@ textarea {
   width: 30%;
 }
 .contenedor {
+  height: 100vh;
   margin: 100px 10% auto 10%;
   width: 80%;
+}
+.welcome-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.operators-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.new_operator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.trucks-contenedor {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.new_truck {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.services-contenedor {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.resultado-services {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.assistances-contenedor {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.resultado-assistances {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .index_button {
   width: 150px;
@@ -310,24 +368,17 @@ textarea {
 }
 .left ul {
   list-style: none;
+  padding-left: 0;
 }
 .rigth ul {
   list-style: none;
+  padding-left: 0;
 }
-.left {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.left li {
-  float: left;
-  margin-right: 60px;
-}
-.right {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.right li {
-  float: left;
+.list1 ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left: 0;
 }
 .list1 li {
   list-style: none;
@@ -338,71 +389,105 @@ textarea {
   font-size: 1.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-left: 25%;
-  margin-right: 10%;
+}
+.list3 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .list3 ul {
   list-style: none;
-  margin-left: 10%;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 .list3 li {
   min-width: 210px;
 }
 .list3 ul,
 li {
-  float: left;
   font-size: 1.2em;
 }
 .list3 li input {
   font-size: 1em;
-  max-width: 250px;
+  width: 250px;
 }
-.service_search input[type=submit],
-.assistance_search input[type=submit] {
-  margin: 25px;
+.columnas {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.service_search input,
-.assistance_search input {
-  margin-top: 0.5em;
+.column1,
+.column2,
+.column3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.registrar {
+  display: flex;
+  justify-content: center;
+}
+.field {
+  width: 250px;
 }
 .campo_data,
 .s_data2 {
   padding-top: 0.2em;
 }
 .campo_data {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
   border-right: solid;
   border-width: 1px;
-  display: inline-block;
   padding-right: 2.5%;
   width: 100px;
 }
 .campo_data2 {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
   padding-left: 2.5%;
-  min-width: 200px;
+  width: 200px;
 }
 .detail a {
   font-size: 1em;
   padding: 7px 10px;
 }
 .S_A {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+.S_A > .detail {
+  display: flex;
+  align-self: center;
+  margin: 0 10% 0 10%;
+  padding: 7px 2px;
 }
 .mas_detalles p {
   font-size: 1.5em;
-  margin: 6px 0;
+}
+.mas_detalles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 #map-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 50px;
+}
+#map-container a {
+  background-color: transparent;
 }
 #map {
-  width: 1000px;
-  height: 500px;
+  width: 100%;
+  height: 100vh;
 }
