@@ -1,20 +1,24 @@
 <div class="mas_detalles">
-  <p>Numero de servicio: <%= @service.id %></p>
-  <p>Fecha: <%= @service.date %></p>
-  <p>Hora: <%= @service.hour %></p>
-  <p>Cliente: <%= @service.client %></p>
-  <p>Grua: <%= @service.truck.number %></p>
-  <p>Operador: <%= @service.operator.name %></p>
-  <p>Ubicacion: <%= @service.ubication %></p>
-  <p>Destino: <%= @service.destiny %></p>
-  <p>#Inventario: <%= @service.inventary_num %></p>
-  <p>Marca: <%= @service.brand %></p>
-  <p>Tipo: <%= @service.car_type %></p>
-  <p>Modelo: <%= @service.model %></p>
-  <p>Color: <%= @service.color %></p>
-  <p>Placas: <%= @service.licence_plates %></p>
-  <%= link_to 'Editar', edit_service_path(@service) %>
-  <%= link_to 'Eliminar', @service, method: :delete %>
+  <div class="detalles">
+    <div class="detalle"><p><span>Numero de servicio:</span> <%= @service.id %></p></div>
+    <div class="detalle"><p><span>Fecha:</span> <%= @service.date %></p></div>
+    <div class="detalle"><p><span>Hora:</span> <%= @service.hour %></p></div>
+    <div class="detalle"><p><span>Cliente:</span> <%= @service.client %></p></div>
+    <div class="detalle"><p><span>Grua:</span> <%= @service.truck.number %></p></div>
+    <div class="detalle"><p><span>Operador:</span> <%= @service.operator.name %></p></div>
+    <div class="detalle"><p><span>Ubicacion:</span> <%= @service.ubication %></p></div>
+    <div class="detalle"><p><span>Destino:</span> <%= @service.destiny %></p></div>
+    <div class="detalle"><p><span>Numero de inventario:</span> <%= @service.inventary_num %></p></div>
+    <div class="detalle"><p><span>Marca:</span> <%= @service.brand %></p></div>
+    <div class="detalle"><p><span>Tipo:</span> <%= @service.car_type %></p></div>
+    <div class="detalle"><p><span>Modelo:</span> <%= @service.model %></p></div>
+    <div class="detalle"><p><span>Color:</span> <%= @service.color %></p></div>
+    <div class="detalle"><p><span>Placas:</span> <%= @service.licence_plates %></p></div>
+  </div>
+  <div class="detalle-b">
+    <%= link_to 'Editar', edit_service_path(@service) %>
+    <%= link_to 'Eliminar', @service, method: :delete %>
+  </div>
 
 </div>
 

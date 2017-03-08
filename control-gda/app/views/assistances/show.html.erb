@@ -1,29 +1,33 @@
 <div class="mas_detalles">
-  <p>Numero de asistencia: <%= @assistance.id%></p>
-  <p>Numero de servicio: <%= @assistance.service.id %></p>
-  <p>Compañia: <%= @assistance.service.client %></p>
-  <p>Fecha: <%= @assistance.service.date %></p>
-  <p>Hora: <%= @assistance.service.hour %></p>
-  <p>Numero de expediente: <%= @assistance.record_number%></p>
-  <p>Quien autoriza: <%= @assistance.company_user%></p>
-  <p>Marca: <%= @assistance.service.brand %></p>
-  <p>Tipo: <%= @assistance.service.car_type %></p>
-  <p>Modelo: <%= @assistance.service.model %></p>
-  <p>Color: <%= @assistance.service.color %></p>
-  <p>Placas: <%= @assistance.service.licence_plates %></p>
-  <p>Nombre del afiliado: <%= @assistance.affiliate_name %></p>
-  <p>Afiliado paga: <%= @assistance.affiliate_pays %></p>
-  <p>Compañia paga: <%= @assistance.company_pays %></p>
-  <p>Contacto: <%= @assistance.contact_time %></p>
-  <p>Termino: <%= @assistance.end_time %></p>
-  <p>Operador: <%= @assistance.service.operator.name %></p>
-  <p>Grua: <%= @assistance.service.truck.number %></p>
-  <p>Quien cotizo: <%= @assistance.who_quoted %></p>
-  <p>Ubicacion: <%= @assistance.service.ubication %></p>
-  <p>Destino: <%= @assistance.service.destiny %></p>
-  <p>Comentarios: <%= @assistance.comments %></p>
-  <%= link_to 'Editar', edit_assistance_path(@assistance) %>
-  <%= link_to 'Eliminar', @assistance, method: :delete %>
+  <div class="detalles">
+    <div class="detalle"><p><span>Numero de asistencia:</span> <%= @assistance.id%></p></div>
+    <div class="detalle"><p><span>Numero de servicio:</span> <%= @assistance.service.id %></p></div>
+    <div class="detalle"><p><span>Compañia:</span> <%= @assistance.service.client %></p></div>
+    <div class="detalle"><p><span>Fecha:</span> <%= @assistance.service.date %></p></div>
+    <div class="detalle"><p><span>Hora:</span> <%= @assistance.service.hour %></p></div>
+    <div class="detalle"><p><span>Numero de expediente:</span> <%= @assistance.record_number%></p></div>
+    <div class="detalle"><p><span>Quien autoriza:</span> <%= @assistance.company_user%></p></div>
+    <div class="detalle"><p><span>Marca:</span> <%= @assistance.service.brand %></p></div>
+    <div class="detalle"><p><span>Tipo:</span> <%= @assistance.service.car_type %></p></div>
+    <div class="detalle"><p><span>Modelo:</span> <%= @assistance.service.model %></p></div>
+    <div class="detalle"><p><span>Color:</span> <%= @assistance.service.color %></p></div>
+    <div class="detalle"><p><span>Placas:</span> <%= @assistance.service.licence_plates %></p></div>
+    <div class="detalle"><p><span>Nombre del afiliado:</span> <%= @assistance.affiliate_name %></p></div>
+    <div class="detalle"><p><span>Afiliado paga:</span> <%= @assistance.affiliate_pays %></p></div>
+    <div class="detalle"><p><span>Compañia paga:</span> <%= @assistance.company_pays %></p></div>
+    <div class="detalle"><p><span>Contacto:</span> <%= @assistance.contact_time %></p></div>
+    <div class="detalle"><p><span>Termino:</span> <%= @assistance.end_time %></p></div>
+    <div class="detalle"><p><span>Operador:</span> <%= @assistance.service.operator.name %></p></div>
+    <div class="detalle"><p><span>Grua:</span> <%= @assistance.service.truck.number %></p></div>
+    <div class="detalle"><p><span>Quien cotizo:</span> <%= @assistance.who_quoted %></p></div>
+    <div class="detalle"><p><span>Ubicacion:</span> <%= @assistance.service.ubication %></p></div>
+    <div class="detalle"><p><span>Destino:</span> <%= @assistance.service.destiny %></p></div>
+    <div class="detalle"><p><span>Comentarios:</span> <%= @assistance.comments %></p></div>  
+  </div>
+  <div class="detalle-b">
+    <%= link_to 'Editar', edit_assistance_path(@assistance) %>
+    <%= link_to 'Eliminar', @assistance, method: :delete %>
+  </div>
 
 </div>
 

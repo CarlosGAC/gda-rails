@@ -466,14 +466,32 @@ li {
   margin: 0 10% 0 10%;
   padding: 7px 2px;
 }
-.mas_detalles p {
-  font-size: 1.5em;
-}
 .mas_detalles {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: center;
+}
+.mas_detalles p {
+  font-size: 1.5em;
+}
+.detalles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.detalle {
+  width: 320px;
+}
+.detalle-b {
+  width: 320px;
+  align-self: center;
+}
+.detalle span {
+  color: #213164;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 #map-container {
   width: 100%;
