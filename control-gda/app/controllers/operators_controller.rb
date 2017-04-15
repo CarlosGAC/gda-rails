@@ -8,7 +8,7 @@ class OperatorsController < ApplicationController
   end
 
   def create
-    @operator = Operator.new(name: params[:operator][:name])
+    @operator = Operator.new(name: params[:operator][:name], lastname: params[:operator][:lastname])
 
     if @operator.save
       redirect_to operators_url, notice: "Operador creado satisfactoriamente"
@@ -24,7 +24,7 @@ class OperatorsController < ApplicationController
   def update
     @operator = Operator.find(params[:id])
 
-    if @operator.update(name: params[:operator][:name])
+    if @operator.update(name: params[:operator][:name], lastname: params[:operator][:lastname])
       redirect_to operators_url, notice: "Operador editado satisfactoriamente"
 
     else
