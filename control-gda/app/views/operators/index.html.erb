@@ -5,9 +5,9 @@
   <% @operators.each do |operator| %>
   <div class="list1">
       <ul>
-        <li><%= operator.name %></td>
+        <li><%= operator.name %></li>
+        <li><%= link_to 'Editar', edit_operator_path(operator) %></li>
       </ul>
-
   </div>
   <% end %>
 </div>

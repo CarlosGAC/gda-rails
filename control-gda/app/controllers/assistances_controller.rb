@@ -25,9 +25,11 @@ class AssistancesController < ApplicationController
       who_quoted: params[:assistance][:who_quoted],
       comments: params[:assistance][:comments]
     )
-    @assistance.save
-
-    redirect_to assistances_url
+    if @assistance.save
+      redirect_to @assistance, notice: "Asistencia creada satisfactoriamente"
+    else
+      render :new, error: "Error: La asistencia no pudo ser guardada safistactoriamente"
+    end
   end
 
   def show
@@ -41,9 +43,9 @@ class AssistancesController < ApplicationController
   def update
     @assistance = Assistance.find(params[:id])
     if @assistance.update(assistance_params)
-      redirect_to @assistance
+      redirect_to @assistance, edit: "Asistencia editada satisfactoriamente"
     else
-      render :edit
+      render :edit, error: "Error: La asistencia no pudo ser guardada satisfactoriamente"
     end
   end
 
@@ -53,7 +55,6 @@ class AssistancesController < ApplicationController
 
     redirect_to assistances_url
   end
-
 
   def assistance_params
     params.require(:assistance).permit(:record_number,:company_user,:affiliate_name,:affiliate_pays,:company_pays,:contact_time,:end_time,:who_quoted,:comments)
