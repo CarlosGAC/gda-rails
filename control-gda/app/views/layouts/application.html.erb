@@ -10,6 +10,12 @@
   	<section id="header">
       <%= link_to(image_tag("logo.png", id: "logo", :title => "Home"), "/",class: "index_logo") %><h1 id="title" class="white">Gruas Garcia de Alba</h1>
   	</section>
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name %>">
+        <%= msg %>
+      </div>
+    <% end %>
+
   	<div class="contenedor">
   		<%= yield %>
   	</div>
