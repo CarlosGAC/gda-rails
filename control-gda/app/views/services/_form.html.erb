@@ -6,7 +6,7 @@
         <div class="left">
           <ul>
             <li>Fecha:</li>
-            <li> <%= s.date_field :date, :value => Time.now.strftime('%Y-%m-%d') %></li>
+            <li> <%= s.date_field :date, :value => current_page?(:action => 'new') ? Time.now.strftime('%Y-%m-%d'):nil %></li>
           </ul>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <div class="left">
           <ul>
             <li>Operador: </li>
-            <li><%= select_tag 'operator', options_from_collection_for_select(@operators, :id, :name)%></li>
+            <li><%= s.collection_select :operator_id, Operator.all, :id, :name %></li>
           </ul>
         </div>
       </div>
@@ -59,7 +59,7 @@
         <div class="left">
           <ul>
             <li>Grua:</li>
-            <li> <%= select_tag 'truck', options_from_collection_for_select(@trucks, :id, :number)%></li>
+            <li><%= s.collection_select :truck_id, Truck.all, :id, :number %></li>
           </ul>
         </div>
       </div>
@@ -118,14 +118,6 @@
           <ul>
             <li>Placas:</li>
             <li> <%= s.text_field :licence_plates, placeholder: "Placas" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Numero de Asistencia: </li>
-            <li><%= s.number_field :assistance_id %></li>
           </ul>
         </div>
       </div>
