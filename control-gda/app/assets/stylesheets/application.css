@@ -374,15 +374,30 @@ textarea {
   list-style: none;
   padding-left: 0;
 }
+.operators-contenedor > a {
+  margin-bottom: 20px;
+}
 .list1 ul {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding-left: 0;
 }
 .list1 li {
   list-style: none;
   font-size: 1.5em;
+}
+.operators-contenedor > .list1 li {
+  list-style: none;
+  font-size: 1.5em;
+}
+.operators-contenedor > .list1 li:first-child {
+  min-width: 350px;
+}
+.operators-contenedor > .list1 li:last-child {
+  margin-left: 10px;
+}
+.list1 li > a {
+  font-size: 1em;
+  padding: 7px 10px;
 }
 .list2 li {
   list-style: none;
