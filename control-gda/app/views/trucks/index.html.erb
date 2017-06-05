@@ -1,4 +1,3 @@
-
 <div class="trucks-contenedor">
 
   <%= link_to 'Nueva Grua', new_truck_path %>
@@ -9,9 +8,8 @@
         <li><%= truck.number %></li>
         <li><%= truck.classification %> :  </li>
         <li><%= truck.description %></li>
+        <li><%= link_to 'Editar', edit_truck_path(truck) %></li>
       </ul>
     </div>
-
-
   <% end %>
 </div>
