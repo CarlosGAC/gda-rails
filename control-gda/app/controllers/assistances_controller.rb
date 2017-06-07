@@ -4,10 +4,10 @@ class AssistancesController < ApplicationController
     if params[:commit]
       @assistance = @q.result.includes(:service)
     else
-      @assistance = Assistance.today()
+      @assistance = Assistance.today
     end
-
   end
+
 
   def new
     @assistance = Assistance.new
@@ -47,37 +47,40 @@ class AssistancesController < ApplicationController
     redirect_to assistances_url
   end
 
+  private
+
   def assistance_params
     params.require(:assistance).permit(
-      :record_number,
-      :company_user,
-      :affiliate_name,
-      :affiliate_pays,
-      :company_pays,
-      :contact_time,
-      :end_time,
-      :who_quoted,
-      :comments,
-      :service_attributes => [
-        :id,
-        :date,
-        :hour,
-        :client,
-        :ubication,
-        :destiny,
-        :operator,
-        :truck,
-        :inventary_num,
-        :brand,
-        :car_type,
-        :model,
-        :color,
-        :licence_plates,
-        :keys_num,
-        :operator_id,
-        :truck_id,
-        :assistance_id
-    ])
+        :record_number,
+        :company_user,
+        :affiliate_name,
+        :affiliate_pays,
+        :company_pays,
+        :contact_time,
+        :end_time,
+        :who_quoted,
+        :comments,
+        :service_attributes => [
+            :id,
+            :date,
+            :hour,
+            :client,
+            :ubication,
+            :destiny,
+            :operator,
+            :truck,
+            :inventary_num,
+            :brand,
+            :car_type,
+            :model,
+            :color,
+            :licence_plates,
+            :keys_num,
+            :operator_id,
+            :truck_id,
+            :assistance_id
+        ])
   end
 
 end
+

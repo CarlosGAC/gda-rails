@@ -1,218 +1,218 @@
 <%= form_for @assistance do |a| %>
-<%= a.fields_for :service do |serv| %>
-<div class="list3">
-  <h2 class="">Campos asistencia</h2>
-  <div class="columnas">
-    <div class="column1">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Numero de expediente:</li>
-            <li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %></li>
-          </ul>
+    <%= a.fields_for :service do |serv| %>
+        <div class="list3">
+          <h2 class="">Campos asistencia</h2>
+          <div class="columnas">
+            <div class="column1">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Numero de expediente:</li>
+                    <li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Quien autoriza:</li>
+                    <li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Nombre del afiliado:</li>
+                    <li> <%= a.text_field :affiliate_name %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column2">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Afiliado paga:</li>
+                    <li> <%= a.number_field :affiliate_pays %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Compañia paga:</li>
+                    <li> <%= a.number_field :company_pays %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Contacto:</li>
+                    <li><%= a.time_field :contact_time %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column3">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Termino:</li>
+                    <li><%= a.time_field :end_time %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Quien cotizo:</li>
+                    <li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Comentarios:</li>
+                    <li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="">Campos servicio</h2>
+          <%# NEW SERVICE FORM FIELDS %>
+          <div class="columnas">
+            <div class="column1">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Fecha:</li>
+                    <li> <%= serv.date_field :date, :value => current_page?(:action => 'new') ? Time.now.strftime('%Y-%m-%d') : nil %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Hora:</li>
+                    <li> <%= serv.time_field :hour %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Nombre del cliente:</li>
+                    <li> <%= serv.text_field :client, placeholder: "Cliente" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Ubicación:</li>
+                    <li><%= serv.text_field :ubication, placeholder: "Ubicación" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Destino:</li>
+                    <li> <%= serv.text_field :destiny, placeholder: "Destino" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column2">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Operador:</li>
+                    <li><%= serv.collection_select :operator_id, Operator.all, :id, :name %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Grua:</li>
+                    <li><%= serv.collection_select :truck_id, Truck.all, :id, :number %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Número de inventario:</li>
+                    <li><%= serv.number_field :inventary_num %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Número de llaves:</li>
+                    <li><%= serv.number_field :keys_num %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Marca:</li>
+                    <li> <%= serv.text_field :brand, placeholder: "Marca" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column3">
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Tipo:</li>
+                    <li> <%= serv.text_field :car_type, placeholder: "Tipo" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Modelo:</li>
+                    <li> <%= serv.text_field :model, placeholder: "Modelo" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Color:</li>
+                    <li><%= serv.text_field :color, placeholder: "Color" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field">
+                <div class="left">
+                  <ul>
+                    <li>Placas:</li>
+                    <li> <%= serv.text_field :licence_plates, placeholder: "Placas" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="registrar">
+            <div class="field">
+              <div class="left">
+                <ul>
+                  <li><%= submit_tag("Registrar") %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Quien autoriza:</li>
-            <li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Nombre del afiliado:</li>
-            <li> <%= a.text_field :affiliate_name %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="column2">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Afiliado paga:</li>
-            <li> <%= a.number_field :affiliate_pays %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Compañia paga:</li>
-            <li> <%= a.number_field :company_pays%></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Contacto: </li>
-            <li><%= a.time_field :contact_time%></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="column3">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Termino: </li>
-            <li><%= a.time_field :end_time%></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Quien cotizo: </li>
-            <li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Comentarios: </li>
-            <li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h2 class="">Campos servicio</h2>
-  <%# NEW SERVICE FORM FIELDS %>
-  <div class="columnas">
-    <div class="column1">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Fecha:</li>
-            <li> <%= serv.date_field :date, :value => current_page?(:action => 'new') ? Time.now.strftime('%Y-%m-%d'):nil %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Hora:</li>
-            <li> <%= serv.time_field :hour %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Nombre del cliente:</li>
-            <li> <%= serv.text_field :client, placeholder: "Cliente" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Ubicación: </li>
-            <li><%= serv.text_field :ubication, placeholder: "Ubicación" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Destino:</li>
-            <li> <%= serv.text_field :destiny, placeholder: "Destino" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="column2">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Operador: </li>
-            <li><%= serv.collection_select :operator_id, Operator.all, :id, :name %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Grua:</li>
-            <li><%= serv.collection_select :truck_id, Truck.all, :id, :number %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Número de inventario: </li>
-            <li><%= serv.number_field :inventary_num %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Número de llaves: </li>
-            <li><%= serv.number_field :keys_num %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Marca:</li>
-            <li> <%= serv.text_field :brand, placeholder: "Marca" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="column3">
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Tipo:</li>
-            <li> <%= serv.text_field :car_type, placeholder: "Tipo" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Modelo:</li>
-            <li> <%= serv.text_field :model, placeholder: "Modelo" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Color: </li>
-            <li><%= serv.text_field :color, placeholder: "Color" %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="field">
-        <div class="left">
-          <ul>
-            <li>Placas:</li>
-            <li> <%= serv.text_field :licence_plates, placeholder: "Placas" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="registrar">
-    <div class="field">
-      <div class="left">
-        <ul>
-          <li><%= submit_tag("Registrar") %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+    <% end %>
 <% end %>

@@ -8,7 +8,7 @@ class OperatorsController < ApplicationController
   end
 
   def create
-    @operator = Operator.new(name: params[:operator][:name], lastname: params[:operator][:lastname])
+    @operator = Operator.new(operator_params)
 
     if @operator.save
       redirect_to operators_url, notice: "Operador creado satisfactoriamente"
@@ -24,11 +24,20 @@ class OperatorsController < ApplicationController
   def update
     @operator = Operator.find(params[:id])
 
-    if @operator.update(name: params[:operator][:name], lastname: params[:operator][:lastname])
+    if @operator.update(operator_params)
       redirect_to operators_url, notice: "Operador editado satisfactoriamente"
 
     else
       render :edit, error: "Error: El servicio no se pudo editar satisfactoriamente"
     end
   end
+
+  private
+
+  def operator_params
+    params.require(:operator).permit(
+    :name,
+    :lastname)
+  end
+
 end
