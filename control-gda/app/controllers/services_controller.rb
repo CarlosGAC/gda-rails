@@ -27,6 +27,13 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Reporte de servicio_##{@service.id}_#{Time.zone.now}",
+               template: "services/service_pdf_layout"
+      end
+    end
   end
 
   def edit

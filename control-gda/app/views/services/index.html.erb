@@ -55,7 +55,8 @@
       <div class="campo_data2">
         <%= s.destiny %></div>
 
-      <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %></div>
+      <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %>
+      <%= link_to 'Generar PDF', service_path(s, :format => 'pdf'), target: "_blank" %></div>
 
     </div>
     <% end %>
