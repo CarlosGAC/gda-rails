@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= wicked_pdf_stylesheet_link_tag "pdfstyle" %>
+</head>
+
+<body>
+
+<p><span>Número de asistencia:</span> <%= @assistance.id %></p>
+<p><span>Número de servicio:</span> <%= @assistance.service.id %></p>
+<p><span>Compañía:</span> <%= @assistance.service.client %></p>
+<p><span>Fecha:</span> <%= @assistance.service.date %></p>
+<p><span>Hora:</span> <%= @assistance.service.hour.strftime('%I:%M:%S %p') %></p>
+<p><span>Numero de expediente:</span> <%= @assistance.record_number %></p>
+<p><span>Quien autoriza:</span> <%= @assistance.company_user %></p>
+<p><span>Marca:</span> <%= @assistance.service.brand %></p>
+<p><span>Tipo:</span> <%= @assistance.service.car_type %></p>
+<p><span>Modelo:</span> <%= @assistance.service.model %></p>
+<p><span>Color:</span> <%= @assistance.service.color %></p>
+<p><span>Placas:</span> <%= @assistance.service.licence_plates %></p>
+<p><span>Nombre del afiliado:</span> <%= @assistance.affiliate_name %></p>
+<p><span>Afiliado paga:</span> <%= @assistance.affiliate_pays %>$</p>
+<p><span>Compañía paga:</span> <%= @assistance.company_pays %>$</p>
+<p><span>Contacto:</span> <%= @assistance.contact_time.strftime('%I:%M:%S %p') %></p>
+<p><span>Termino:</span> <%= @assistance.end_time.strftime('%I:%M:%S %p') %></p>
+<p><span>Operador:</span> <%= @assistance.service.operator.name %></p>
+<p><span>Grúa:</span> <%= @assistance.service.truck.number %></p>
+<p><span>Quien cotizo:</span> <%= @assistance.who_quoted %></p>
+<p><span>Ubicación:</span> <%= @assistance.service.ubication %></p>
+<p><span>Destino:</span> <%= @assistance.service.destiny %></p>
+<p><span>Comentarios:</span> <%= @assistance.comments %></p>
+
+<p style="float: right; font-size: 12px;">
+  <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p>
+</body>
+
+</html>

@@ -1,12 +1,12 @@
 <div class="mas_detalles">
   <div class="detalles">
-    <div class="detalle"><p><span>Numero de asistencia: #</span><%= @assistance.id%></p></div>
+    <div class="detalle"><p><span>Numero de asistencia: #</span><%= @assistance.id %></p></div>
     <div class="detalle"><p><span>Numero de servicio:</span> <%= @assistance.service.id %></p></div>
     <div class="detalle"><p><span>Compañia:</span> <%= @assistance.service.client %></p></div>
     <div class="detalle"><p><span>Fecha:</span> <%= @assistance.service.date %></p></div>
-    <div class="detalle"><p><span>Hora:</span> <%= @assistance.service.hour %></p></div>
-    <div class="detalle"><p><span>Numero de expediente:</span> <%= @assistance.record_number%></p></div>
-    <div class="detalle"><p><span>Quien autoriza:</span> <%= @assistance.company_user%></p></div>
+    <div class="detalle"><p><span>Hora:</span> <%= @assistance.service.hour.strftime('%I:%M:%S %p') %></p></div>
+    <div class="detalle"><p><span>Numero de expediente:</span> <%= @assistance.record_number %></p></div>
+    <div class="detalle"><p><span>Quien autoriza:</span> <%= @assistance.company_user %></p></div>
     <div class="detalle"><p><span>Marca:</span> <%= @assistance.service.brand %></p></div>
     <div class="detalle"><p><span>Tipo:</span> <%= @assistance.service.car_type %></p></div>
     <div class="detalle"><p><span>Modelo:</span> <%= @assistance.service.model %></p></div>
@@ -15,14 +15,14 @@
     <div class="detalle"><p><span>Nombre del afiliado:</span> <%= @assistance.affiliate_name %></p></div>
     <div class="detalle"><p><span>Afiliado paga:</span> <%= @assistance.affiliate_pays %></p></div>
     <div class="detalle"><p><span>Compañia paga:</span> <%= @assistance.company_pays %></p></div>
-    <div class="detalle"><p><span>Contacto:</span> <%= @assistance.contact_time %></p></div>
-    <div class="detalle"><p><span>Termino:</span> <%= @assistance.end_time %></p></div>
+    <div class="detalle"><p><span>Contacto:</span> <%= @assistance.contact_time.strftime('%I:%M:%S %p') %></p></div>
+    <div class="detalle"><p><span>Termino:</span> <%= @assistance.end_time.strftime('%I:%M:%S %p') %></p></div>
     <div class="detalle"><p><span>Operador:</span> <%= @assistance.service.operator.name %></p></div>
     <div class="detalle"><p><span>Grua:</span> <%= @assistance.service.truck.number %></p></div>
     <div class="detalle"><p><span>Quien cotizo:</span> <%= @assistance.who_quoted %></p></div>
     <div class="detalle"><p><span>Ubicacion:</span> <%= @assistance.service.ubication %></p></div>
     <div class="detalle"><p><span>Destino:</span> <%= @assistance.service.destiny %></p></div>
-    <div class="detalle"><p><span>Comentarios:</span> <%= @assistance.comments %></p></div>  
+    <div class="detalle"><p><span>Comentarios:</span> <%= @assistance.comments %></p></div>
   </div>
   <div class="detalle-b">
     <%= link_to 'Editar', edit_assistance_path(@assistance) %>

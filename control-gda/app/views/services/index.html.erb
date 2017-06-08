@@ -26,20 +26,42 @@
   <tr>
     <th><%= sort_link @q, :date, "Fecha" %></th>
   </tr>
-
+  <% if @service.any? %>
   <div class="resultado-assistances">
     <% @service.each do |s| %>
     <div class="S_A">
-      <div class="campo_data">Fecha: </div><div class="campo_data2"> <%= s.date %></div>
-      <div class="campo_data">Hora: </div><div class="campo_data2"> <%= s.hour %></div>
-      <div class="campo_data">Cliente: </div><div class="campo_data2"> <%= s.client %></div>
-      <div class="campo_data">Operador: </div><div class="campo_data2"> <%= s.operator.name %></div>
-      <div class="campo_data">Ubicacion: </div><div class="campo_data2"> <%= s.ubication %></div>
-      <div class="campo_data">Destino: </div><div class="campo_data2"> <%= s.destiny %></div>
+      <div class="campo_data">Fecha:
+      </div>
+      <div class="campo_data2">
+        <%= s.date %></div>
+      <div class="campo_data">Hora:
+      </div>
+      <div class="campo_data2">
+        <%= s.hour.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data">Cliente:
+      </div>
+      <div class="campo_data2">
+        <%= s.client %></div>
+      <div class="campo_data">Operador:
+      </div>
+      <div class="campo_data2">
+        <%= s.operator.name %></div>
+      <div class="campo_data">Ubicacion:
+      </div>
+      <div class="campo_data2">
+        <%= s.ubication %></div>
+      <div class="campo_data">Destino:
+      </div>
+      <div class="campo_data2">
+        <%= s.destiny %></div>
 
       <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %></div>
 
     </div>
     <% end %>
+  <% else %>
+    <%#Make me look fancy?%>
+    <p>No hay servicios registrados el día de hoy.</p>
+    <% end %>
   </div>
-  </div>
+</div>

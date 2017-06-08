@@ -25,6 +25,13 @@ class AssistancesController < ApplicationController
 
   def show
     @assistance = Assistance.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Reporte de asistencia_##{@assistance.id}_#{Time.zone.now}",
+               template: "assistances/assistance_pdf_layout"
+      end
+    end
   end
 
   def edit
