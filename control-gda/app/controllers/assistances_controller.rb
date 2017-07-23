@@ -2,29 +2,20 @@ class AssistancesController < ApplicationController
   def index
     @q = Assistance.search(params[:q])
     if params[:commit]
-    @assistance = @q.result.includes(:service)
-  else
-    @assistance = Assistance.today()
+      @assistance = @q.result.includes(:service)
+    else
+      @assistance = Assistance.today
     end
-
   end
+
 
   def new
     @assistance = Assistance.new
+    @assistance.build_service
   end
 
   def create
-    @assistance = Assistance.new(
-      record_number: params[:assistance][:record_number],
-      company_user: params[:assistance][:company_user],
-      affiliate_name: params[:assistance][:affiliate_name],
-      affiliate_pays: params[:assistance][:affiliate_pays],
-      company_pays: params[:assistance][:company_pays],
-      contact_time: params[:assistance][:contact_time],
-      end_time: params[:assistance][:end_time],
-      who_quoted: params[:assistance][:who_quoted],
-      comments: params[:assistance][:comments]
-    )
+    @assistance = Assistance.new(assistance_params)
     if @assistance.save
       redirect_to @assistance, notice: "Asistencia creada satisfactoriamente"
     else
@@ -34,6 +25,13 @@ class AssistancesController < ApplicationController
 
   def show
     @assistance = Assistance.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Reporte de asistencia_##{@assistance.id}_#{Time.zone.now}",
+               template: "assistances/assistance_pdf_layout"
+      end
+    end
   end
 
   def edit
@@ -56,8 +54,39 @@ class AssistancesController < ApplicationController
     redirect_to assistances_url
   end
 
+  private
+
   def assistance_params
-    params.require(:assistance).permit(:record_number,:company_user,:affiliate_name,:affiliate_pays,:company_pays,:contact_time,:end_time,:who_quoted,:comments)
+    params.require(:assistance).permit(
+        :record_number,
+        :company_user,
+        :affiliate_name,
+        :affiliate_pays,
+        :company_pays,
+        :contact_time,
+        :end_time,
+        :who_quoted,
+        :comments,
+        :service_attributes => [
+            :id,
+            :date,
+            :hour,
+            :client,
+            :ubication,
+            :destiny,
+            :operator,
+            :truck,
+            :inventary_num,
+            :brand,
+            :car_type,
+            :model,
+            :color,
+            :licence_plates,
+            :keys_num,
+            :operator_id,
+            :truck_id,
+            :assistance_id
+        ])
   end
 
 end

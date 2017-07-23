@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170723204336) do
     t.datetime "updated_at",     null: false
   end
 
+<<<<<<< HEAD
   create_table "inventories", force: :cascade do |t|
     t.string   "authority"
     t.string   "serial"
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170723204336) do
     t.datetime "updated_at",      null: false
   end
 
+=======
+>>>>>>> refs/remotes/origin/master
   create_table "operators", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

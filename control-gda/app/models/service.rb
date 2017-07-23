@@ -4,7 +4,7 @@ class Service < ActiveRecord::Base
   belongs_to :assistance
   belongs_to :inventory
 
-  def self.today()
-  	where(date: Date.today)
+  def self.today
+    where(date: Date.today)
   end
 end

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= wicked_pdf_stylesheet_link_tag "pdfstyle" %>
+</head>
+
+<body>
+  <p><span>Numero de servicio: </span>#<%=@service.id %></p>
+  <p><span>Fecha:</span> <%= @service.date %></p></div>
+  <p><span>Hora:</span> <%= @service.hour.strftime('%I:%M:%S %p') %></p>
+  <p><span>Cliente:</span> <%= @service.client %></p>
+  <p><span>Grua:</span> <%= @service.truck.number %></p>
+  <p><span>Operador:</span> <%= @service.operator.name %></p>
+  <p><span>Ubicacion:</span> <%= @service.ubication %></p>
+  <p><span>Destino:</span> <%= @service.destiny %></p>
+  <p><span>Numero de inventario:</span> <%= @service.inventary_num %></p>
+  <p><span>Marca:</span> <%= @service.brand %></p>
+  <p><span>Tipo:</span> <%= @service.car_type %></p>
+  <p><span>Modelo:</span> <%= @service.model %></p>
+  <p><span>Color:</span> <%= @service.color %></p>
+  <p><span>Placas:</span> <%= @service.licence_plates %></p>
+  
+<p style="float: right; font-size: 12px;">
+  <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p>
+</body>
+
+</html>

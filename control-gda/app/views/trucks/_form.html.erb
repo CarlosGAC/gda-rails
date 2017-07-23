@@ -1,0 +1,23 @@
+<%= form_for @truck do |f| %>
+
+    <div class="list2">
+      <ul>
+
+        <div class="field">
+          <li>  <%= f.text_field :number, placeholder: "Número" %>
+        </div>
+        <div class="field">
+          <%# NOTE: If the user is trying to edit some record here
+               the select is not going to show the current value
+               instead it is going to show the first element => A %>
+          <li><%= f.select :classification, options_for_select([['A', "A"], ['B', "B"], ['C', "C"], ['D', "D"]]) %>
+        </div>
+        <div class="field">
+          <li>  <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <li>  <%= submit_tag("Ingresar Grua") %>
+        </div>
+      </ul>
+    </div>
+<% end %>

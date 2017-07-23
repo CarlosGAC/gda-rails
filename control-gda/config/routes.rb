@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :routes
   root 'welcome#index'
 
   resources :users
@@ -16,5 +15,6 @@ Rails.application.routes.draw do
   resources :map
 
   resources :inventories
-  
+
+  resources :routes
 end
