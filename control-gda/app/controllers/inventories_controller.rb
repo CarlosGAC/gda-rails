@@ -24,30 +24,39 @@ class InventoriesController < ApplicationController
   # POST /inventories
   # POST /inventories.json
   def create
-    @inventory = Inventory.new(inventory_params)
-
-    respond_to do |format|
-      if @inventory.save
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @inventory }
-      else
-        format.html { render :new }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
-      end
+    @inventory = Inventory.new(
+    authority: params[:inventory][:authority],
+    serial: params[:inventory][:serial],
+    maneuver: params[:inventory][:maneuver],
+    service_type: params[:inventory][:service_type],
+    number: params[:inventory][:number],
+    departure_place: params[:inventory][:departure_place],
+    sinister_place: params[:inventory][:sinister_place],
+    driver_name: params[:inventory][:driver_name]
+    )
+    if @inventory.save
+      flash[:notice] = "Inventario creado satisfactoriamente"
+      redirect_to @inventory
     end
   end
 
   # PATCH/PUT /inventories/1
   # PATCH/PUT /inventories/1.json
   def update
-    respond_to do |format|
-      if @inventory.update(inventory_params)
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @inventory }
-      else
-        format.html { render :edit }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
-      end
+    @inventory = Inventory.find(params[:id])
+    if @inventory.update(
+      authority: params[:inventory][:authority],
+      serial: params[:inventory][:serial],
+      maneuver: params[:inventory][:maneuver],
+      service_type: params[:inventory][:service_type],
+      number: params[:inventory][:number],
+      departure_place: params[:inventory][:departure_place],
+      sinister_place: params[:inventory][:sinister_place],
+      driver_name: params[:inventory][:driver_name]
+      )
+      redirect_to @inventory, edit: "Inventario editado safistactoriamente"
+    else
+      render :edit, error: "Error: El inventario no se pudo editar satisfactoriamente"
     end
   end
 

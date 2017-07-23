@@ -16,6 +16,7 @@ class ServicesController < ApplicationController
 
   def create
 
+    @inventory = Inventory.select(:id).where(number: params[:service][:inventary_num]).first.id
     @service = Service.new(
       date: params[:service][:date],
       hour: params[:service][:hour],
@@ -31,7 +32,8 @@ class ServicesController < ApplicationController
       color: params[:service][:color],
       licence_plates: params[:service][:licence_plates],
       keys_num: params[:service][:keys_num],
-      assistance_id: params[:service][:assistance_id]
+      assistance_id: params[:service][:assistance_id],
+      inventory_id: @inventory
     )
     if @service.save
       flash[:notice] = "Servicio creado satisfactoriamente"
@@ -52,6 +54,7 @@ class ServicesController < ApplicationController
   end
 
   def update
+    @inventory = Inventory.select(:id).where(number: params[:service][:inventary_num]).first.id
     @service = Service.find(params[:id])
     if @service.update(
       date: params[:service][:date],
@@ -68,7 +71,8 @@ class ServicesController < ApplicationController
       color: params[:service][:color],
       licence_plates: params[:service][:licence_plates],
       keys_num: params[:service][:keys_num],
-      assistance_id: params[:service][:assistance_id]
+      assistance_id: params[:service][:assistance_id],
+      inventory_id: @inventory
     )
       redirect_to @service, edit: "Servicio editado safistactoriamente"
     else

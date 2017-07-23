@@ -1,44 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Authority:</strong>
-  <%= @inventory.authority %>
-</p>
 
-<p>
-  <strong>Serial:</strong>
-  <%= @inventory.serial %>
-</p>
 
-<p>
-  <strong>Maneuver:</strong>
-  <%= @inventory.maneuver %>
-</p>
+  <div class="mas_detalles">
+    <div class="detalles">
 
-<p>
-  <strong>Service type:</strong>
-  <%= @inventory.service_type %>
-</p>
+      <div class="detalle"><p><span>Numero de Inventario:</span> <%= @inventory.number %></p></div>
+      <div class="detalle"><p><span>Fecha:</span> <%= @inventory.number %></p></div>
+      <div class="detalle"><p><span>Hora:</span> <%= @inventory.number %></p></div>
+      <div class="detalle"><p><span>Grua:</span> <%= @inventory.service.truck.number %></p></div>
+      <div class="detalle"><p><span>Operador:</span> <%= @inventory.service.operator.name %></p></div>
+      <div class="detalle"><p><span>Maniobras:</span> <%= @inventory.maneuver %></p></div>
+      <div class="detalle"><p><span>Tipo de servicio:</span> <%= @inventory.service_type %></p></div>
+      <div class="detalle"><p><span>Autoridad que envia:</span> <%= @inventory.authority %></p></div>
+      <div class="detalle"><p><span>Marca:</span> <%= @inventory.service.brand %></p></div>
+      <div class="detalle"><p><span>Tipo:</span> <%= @inventory.service.car_type %></p></div>
+      <div class="detalle"><p><span>Modelo:</span> <%= @inventory.service.model %></p></div>
+      <div class="detalle"><p><span>Numero de serie/Motor:</span> <%= @inventory.serial %></p></div>
+      <div class="detalle"><p><span>Placas:</span> <%= @inventory.service.licence_plates %></p></div>
+      <div class="detalle"><p><span>Color:</span> <%= @inventory.service.color %></p></div>
+      <div class="detalle"><p><span>Lugar de Partida:</span> <%= @inventory.departure_place %></p></div>
+      <div class="detalle"><p><span>Lugar de Siniestro:</span> <%= @inventory.sinister_place %></p></div>
+    </div>
+    <div class="detalle-b">
+      <%= link_to 'Edit', edit_inventory_path(@inventory) %>
+      <%= link_to 'Back', inventories_path %>
+    </div>
 
-<p>
-  <strong>Number:</strong>
-  <%= @inventory.number %>
-</p>
+  </div>
 
-<p>
-  <strong>Departure place:</strong>
-  <%= @inventory.departure_place %>
-</p>
-
-<p>
-  <strong>Sinister place:</strong>
-  <%= @inventory.sinister_place %>
-</p>
-
-<p>
-  <strong>Driver name:</strong>
-  <%= @inventory.driver_name %>
-</p>
-
-<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
-<%= link_to 'Back', inventories_path %>
+  <br>

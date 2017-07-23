@@ -4,7 +4,7 @@ class CreateInventories < ActiveRecord::Migration
       t.string :authority
       t.string :serial
       t.string :maneuver
-      t.integer :service_type
+      t.string :service_type
       t.string :number
       t.string :departure_place
       t.string :sinister_place
