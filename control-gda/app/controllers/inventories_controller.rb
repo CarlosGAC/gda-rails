@@ -4,7 +4,9 @@ class InventoriesController < ApplicationController
   # GET /inventories
   # GET /inventories.json
   def index
-    @inventories = Inventory.all
+    @inventories =  Inventory.all
+    @q = Inventory.search(params[:q])
+    @inventory = @q.result.includes(:service)
   end
 
   # GET /inventories/1

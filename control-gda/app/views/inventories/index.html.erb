@@ -2,6 +2,23 @@
 
 <h2>Inventarios</h2>
 
+<%= search_form_for @q do |f| %>
+
+<%= f.search_field :service_client_cont, placeholder: 'Nombre del cliente' %>
+<%= f.search_field :service_ubication_cont, placeholder: 'Ubicación' %>
+<%= f.search_field :service_destiny_cont, placeholder: 'Destino' %>
+<%= f.search_field :number_cont, placeholder: 'Número de inventario' %>
+<%= f.search_field :service_keys_num_cont, placeholder: 'Número de llaves' %>
+<%= f.search_field :service_brand_cont, placeholder: 'Marca' %>
+<%= f.search_field :service_car_type_cont, placeholder: 'Tipo' %>
+<%= f.search_field :service_color_cont, placeholder: 'Color' %>
+<%= f.search_field :service_licence_plates_cont, placeholder: 'Placas' %>
+<%= f.search_field :service_model_cont, placeholder: 'Modelo' %>
+<%= f.search_field :service_operator_name_cont, placeholder: 'Operador' %>
+<%= f.search_field :service_truck_number_cont, placeholder: 'Grua' %>
+<%= f.submit "Buscar"%>
+<%end%>
+
 <table>
   <thead>
     <tr>
@@ -18,7 +35,7 @@
   </thead>
 
   <tbody>
-    <% @inventories.each do |inventory| %>
+    <% @inventory.each do |inventory| %>
       <tr>
         <td><%= inventory.authority %></td>
         <td><%= inventory.serial %></td>
