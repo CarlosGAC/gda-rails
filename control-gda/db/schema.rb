@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415204541) do
+ActiveRecord::Schema.define(version: 20170723204336) do
 
   create_table "assistances", force: :cascade do |t|
     t.string   "record_number"
@@ -27,11 +27,31 @@ ActiveRecord::Schema.define(version: 20170415204541) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.string   "authority"
+    t.string   "serial"
+    t.string   "maneuver"
+    t.string   "service_type"
+    t.string   "number"
+    t.string   "departure_place"
+    t.string   "sinister_place"
+    t.string   "driver_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "operators", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "lastname"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "kilometers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "services", force: :cascade do |t|
@@ -52,9 +72,11 @@ ActiveRecord::Schema.define(version: 20170415204541) do
     t.integer  "operator_id"
     t.integer  "truck_id"
     t.integer  "assistance_id"
+    t.integer  "inventory_id"
   end
 
   add_index "services", ["assistance_id"], name: "index_services_on_assistance_id"
+  add_index "services", ["inventory_id"], name: "index_services_on_inventory_id"
   add_index "services", ["operator_id"], name: "index_services_on_operator_id"
   add_index "services", ["truck_id"], name: "index_services_on_truck_id"
 
