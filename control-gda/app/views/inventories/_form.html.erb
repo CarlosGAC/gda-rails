@@ -1,0 +1,49 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :authority %><br>
+    <%= f.text_field :authority %>
+  </div>
+  <div class="field">
+    <%= f.label :serial %><br>
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :maneuver %><br>
+    <%= f.text_field :maneuver %>
+  </div>
+  <div class="field">
+    <%= f.label :service_type %><br>
+    <%= f.text_field :service_type %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_place %><br>
+    <%= f.text_field :departure_place %>
+  </div>
+  <div class="field">
+    <%= f.label :sinister_place %><br>
+    <%= f.text_field :sinister_place %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_name %><br>
+    <%= f.text_field :driver_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

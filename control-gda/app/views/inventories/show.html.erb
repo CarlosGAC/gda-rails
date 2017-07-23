@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Authority:</strong>
+  <%= @inventory.authority %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @inventory.serial %>
+</p>
+
+<p>
+  <strong>Maneuver:</strong>
+  <%= @inventory.maneuver %>
+</p>
+
+<p>
+  <strong>Service type:</strong>
+  <%= @inventory.service_type %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @inventory.number %>
+</p>
+
+<p>
+  <strong>Departure place:</strong>
+  <%= @inventory.departure_place %>
+</p>
+
+<p>
+  <strong>Sinister place:</strong>
+  <%= @inventory.sinister_place %>
+</p>
+
+<p>
+  <strong>Driver name:</strong>
+  <%= @inventory.driver_name %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
