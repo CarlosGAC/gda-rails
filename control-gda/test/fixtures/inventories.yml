@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  authority: MyString
+  serial: MyString
+  maneuver: MyString
+  service_type: 
+  number: MyString
+  departure_place: MyString
+  sinister_place: MyString
+  driver_name: MyString
+
+two:
+  authority: MyString
+  serial: MyString
+  maneuver: MyString
+  service_type: 
+  number: MyString
+  departure_place: MyString
+  sinister_place: MyString
+  driver_name: MyString
