@@ -1,14 +1,14 @@
 <%= form_for @assistance do |a| %>
     <%= a.fields_for :service do |serv| %>
         <div class="list3">
-          <h2 class="">Campos asistencia</h2>
+          <h2 class="h2-sign">Campos asistencia</h2>
           <div class="columnas">
             <div class="column1">
               <div class="field">
                 <div class="left">
                   <ul>
                     <li>Numero de expediente:</li>
-                    <li> <%= a.text_field :record_number, placeholder: "Numero de Expediente" %></li>
+                    <li> <%= a.text_field :record_number %></li>
                   </ul>
                 </div>
               </div>
@@ -16,7 +16,7 @@
                 <div class="left">
                   <ul>
                     <li>Quien autoriza:</li>
-                    <li> <%= a.text_field :company_user, placeholder: "Nombre del usuario" %></li>
+                    <li> <%= a.text_field :company_user %></li>
                   </ul>
                 </div>
               </div>
@@ -68,7 +68,7 @@
                 <div class="left">
                   <ul>
                     <li>Quien cotizo:</li>
-                    <li><%= a.text_field :who_quoted, placeholder: "Quien cotizo" %></li>
+                    <li><%= a.text_field :who_quoted %></li>
                   </ul>
                 </div>
               </div>
@@ -76,13 +76,13 @@
                 <div class="left">
                   <ul>
                     <li>Comentarios:</li>
-                    <li><%= a.text_field :comments, placeholder: "Comentarios" %></li>
+                    <li><%= a.text_field :comments %></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <h2 class="">Campos servicio</h2>
+          <h2 class="h2-sign">Campos servicio</h2>
           <%# NEW SERVICE FORM FIELDS %>
           <div class="columnas">
             <div class="column1">
@@ -106,7 +106,7 @@
                 <div class="left">
                   <ul>
                     <li>Nombre del cliente:</li>
-                    <li> <%= serv.text_field :client, placeholder: "Cliente" %></li>
+                    <li> <%= serv.text_field :client %></li>
                   </ul>
                 </div>
               </div>
@@ -114,7 +114,7 @@
                 <div class="left">
                   <ul>
                     <li>Ubicación:</li>
-                    <li><%= serv.text_field :ubication, placeholder: "Ubicación" %></li>
+                    <li><%= serv.text_field :ubication %></li>
                   </ul>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                 <div class="left">
                   <ul>
                     <li>Destino:</li>
-                    <li> <%= serv.text_field :destiny, placeholder: "Destino" %></li>
+                    <li> <%= serv.text_field :destiny %></li>
                   </ul>
                 </div>
               </div>
@@ -164,7 +164,7 @@
                 <div class="left">
                   <ul>
                     <li>Marca:</li>
-                    <li> <%= serv.text_field :brand, placeholder: "Marca" %></li>
+                    <li> <%= serv.text_field :brand %></li>
                   </ul>
                 </div>
               </div>
@@ -174,7 +174,7 @@
                 <div class="left">
                   <ul>
                     <li>Tipo:</li>
-                    <li> <%= serv.text_field :car_type, placeholder: "Tipo" %></li>
+                    <li> <%= serv.text_field :car_type %></li>
                   </ul>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                 <div class="left">
                   <ul>
                     <li>Modelo:</li>
-                    <li> <%= serv.text_field :model, placeholder: "Modelo" %></li>
+                    <li> <%= serv.text_field :model %></li>
                   </ul>
                 </div>
               </div>
@@ -190,7 +190,7 @@
                 <div class="left">
                   <ul>
                     <li>Color:</li>
-                    <li><%= serv.text_field :color, placeholder: "Color" %></li>
+                    <li><%= serv.text_field :color %></li>
                   </ul>
                 </div>
               </div>
@@ -198,7 +198,7 @@
                 <div class="left">
                   <ul>
                     <li>Placas:</li>
-                    <li> <%= serv.text_field :licence_plates, placeholder: "Placas" %></li>
+                    <li> <%= serv.text_field :licence_plates %></li>
                   </ul>
                 </div>
               </div>

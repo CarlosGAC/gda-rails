@@ -4,19 +4,22 @@
       <ul>
 
         <div class="field">
-          <li>  <%= f.text_field :number, placeholder: "Número" %>
+          <li>Numero de Grua</li>
+          <li>  <%= f.text_field :number %></li>
         </div>
         <div class="field">
           <%# NOTE: If the user is trying to edit some record here
                the select is not going to show the current value
                instead it is going to show the first element => A %>
-          <li><%= f.select :classification, options_for_select([['A', "A"], ['B', "B"], ['C', "C"], ['D', "D"]]) %>
+          <li>Tipo</li>
+          <li><%= f.select :classification, options_for_select([['A', "A"], ['B', "B"], ['C', "C"], ['D', "D"]]) %></li>
         </div>
         <div class="field">
-          <li>  <%= f.text_area :description %>
+          <li>Descripcion</li>
+          <li>  <%= f.text_area :description %></li>
         </div>
         <div class="field">
-          <li>  <%= submit_tag("Ingresar Grua") %>
+          <li>  <%= submit_tag("Ingresar Grua") %></li>
         </div>
       </ul>
     </div>

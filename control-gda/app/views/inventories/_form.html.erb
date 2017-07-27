@@ -11,41 +11,71 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :authority %><br>
-    <%= f.text_field :authority %>
-  </div>
-  <div class="field">
-    <%= f.label :serial %><br>
-    <%= f.text_field :serial %>
-  </div>
-  <div class="field">
-    <%= f.label :maneuver %><br>
-    <%= f.text_field :maneuver %>
-  </div>
-  <div class="field">
-    <%= f.radio_button(:service_type, "local") %>
-    <%= label_tag(:service_local, "Local") %>
-    <%= f.radio_button(:service_type, "foraneo") %>
-    <%= label_tag(:service_foreigner, "Foraneo") %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.text_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :departure_place %><br>
-    <%= f.text_field :departure_place %>
-  </div>
-  <div class="field">
-    <%= f.label :sinister_place %><br>
-    <%= f.text_field :sinister_place %>
-  </div>
-  <div class="field">
-    <%= f.label :driver_name %><br>
-    <%= f.text_field :driver_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="list3">
+    <!-- <h2 class="h2-sign">Nuevo Inventario</h2> -->
+    <div class="columnas">
+      <div class="column1">
+        <div class="field">
+          <ul>
+            <li>Autoridad que envia:</li>
+            <li><%= f.text_field :authority %></li>
+          </ul>
+        </div>
+        <div class="field">
+          <ul>
+            <li>Numero de serie/Motor:</li>
+            <li><%= f.text_field :serial %></li>
+          </ul>
+        </div>
+        <div class="field">
+          <ul>
+            <li>Maniobras:</li>
+            <li><%= f.text_field :maneuver %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="column2">
+        <div class="field">
+          <ul>
+            <li>Tipo de servicio:</li>
+            <li class="bigger-li"><%= f.radio_button(:service_type, "local") %> Local | <%= f.radio_button(:service_type, "foraneo") %> Foraneo</li>
+          </ul>
+        </div>
+        <div class="field">
+          <ul>
+            <li>Numero de grua:</li>
+            <li><%= f.text_field :number %></li>
+          </ul>
+        </div>
+        <div class="field">
+          <ul>
+            <li>Lugar de partida:</li>
+            <li><%= f.text_field :departure_place %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="column3">
+        <div class="field">
+          <ul>
+            <li>Lugar de siniestro:</li>
+            <li><%= f.text_field :sinister_place %></li>
+          </ul>
+        </div>
+        <div class="field">
+          <ul>
+            <li>Nombre del conductor:</li>
+            <li><%= f.text_field :driver_name %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="registrar">
+      <div class="field">
+        <div class="actions">
+          <%= f.submit %>
+          <%= link_to 'Atras', inventories_path %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
