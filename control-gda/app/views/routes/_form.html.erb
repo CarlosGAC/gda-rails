@@ -11,15 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :kilometers %><br>
-    <%= f.text_field :kilometers %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="list2">
+    <ul>
+      <div class="field">
+        <li>Nombre</li>
+        <li><%= f.text_field :name %></li>
+      </div>
+      <div class="field">
+        <li>Kilometros</li>
+        <li><%= f.text_field :kilometers %></li>
+      </div>
+      <div class="field">
+        <div class="actions">
+          <%= f.submit %>
+          <%= link_to 'Atras', routes_path %>
+        </div>
+      </div>
+    </ul>
   </div>
 <% end %>

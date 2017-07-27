@@ -1,6 +1,5 @@
-<h2>Operadores</h2>
+<h2 class="h2-sign">Operadores</h2>
 <div class="operators-contenedor">
-  <%= link_to 'Nuevo Operador', new_operator_path %>
 
   <% @operators.each do |operator| %>
   <div class="list1">
@@ -10,4 +9,5 @@
       </ul>
   </div>
   <% end %>
+  <%= link_to 'Nuevo Operador', new_operator_path %>
 </div>

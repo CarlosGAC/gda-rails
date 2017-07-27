@@ -1,6 +1,5 @@
-<h2>Asistencias</h2>
+<h2 class="h2-sign">Asistencias</h2>
 <div class="assistances-contenedor">
-  <%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
 
   <%= search_form_for @q do |f| %>
 
@@ -29,16 +28,16 @@
   <div class="resultado-assistances">
     <% @assistance.each do |a| %>
     <div class="S_A">
-      <div class="campo_data">Numero de asistencia: </div><div class="campo_data2"> <%= a.id%></div>
-      <div class="campo_data">Numero de expediente: </div><div class="campo_data2"> <%= a.record_number%></div>
-      <div class="campo_data">Quien autoriza: </div><div class="campo_data2"> <%= a.company_user%></div>
-      <div class="campo_data">Nombre del afiliado: </div><div class="campo_data2"> <%= a.affiliate_name %></div>
-      <div class="campo_data">Afiliado paga: </div><div class="campo_data2"> <%= a.affiliate_pays %></div>
-      <div class="campo_data">Compañia paga: </div><div class="campo_data2"> <%= a.company_pays %></div>
-      <div class="campo_data">Contacto: </div><div class="campo_data2"> <%= a.contact_time.strftime('%I:%M:%S %p') %></div>
-      <div class="campo_data">Termino: </div><div class="campo_data2"> <%= a.end_time.strftime('%I:%M:%S %p') %></div>
-      <div class="campo_data">Quien cotizo: </div><div class="campo_data2"> <%= a.who_quoted %></div>
-      <div class="campo_data">Comentarios: </div><div class="campo_data2"> <%= a.comments %></div>
+      <div class="campo_data"><span>Numero de asistencia: </span></div><div class="campo_data2"> <%= a.id%></div>
+      <div class="campo_data"><span>Numero de expediente: </span></div><div class="campo_data2"> <%= a.record_number%></div>
+      <div class="campo_data"><span>Quien autoriza: </span></div><div class="campo_data2"> <%= a.company_user%></div>
+      <div class="campo_data"><span>Nombre del afiliado: </span></div><div class="campo_data2"> <%= a.affiliate_name %></div>
+      <div class="campo_data"><span>Afiliado paga: </span></div><div class="campo_data2"> <%= a.affiliate_pays %></div>
+      <div class="campo_data"><span>Compañia paga: </span></div><div class="campo_data2"> <%= a.company_pays %></div>
+      <div class="campo_data"><span>Contacto: </span></div><div class="campo_data2"> <%= a.contact_time.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data"><span>Termino: </span></div><div class="campo_data2"> <%= a.end_time.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data"><span>Quien cotizo: </span></div><div class="campo_data2"> <%= a.who_quoted %></div>
+      <div class="campo_data"><span>Comentarios: </span></div><div class="campo_data2"> <%= a.comments %></div>
 
       <div class="detail"><%= link_to 'Mostrar a detalle', a, method: :get %>
       <%= link_to 'Generar PDF', assistance_path(a, :format => 'pdf'), target: "_blank" %></div>
@@ -50,4 +49,5 @@
     <p>No hay asistencias registradas el día de hoy.</p>
     <%end%>
   </div>
+  <%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
 </div>
