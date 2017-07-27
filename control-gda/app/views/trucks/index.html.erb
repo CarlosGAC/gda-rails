@@ -1,11 +1,14 @@
 <h2 class="h2-sign">Gruas</h2>
+<div class="SN-contenedor">
+  <%= link_to 'Nueva Grua', new_truck_path %>
+</div>
 <div class="trucks-contenedor">
 
   <div class="list1">
     <ul>
-      <li>Numero de Grua</li>
-      <li>Tipo</li>
-      <li>Descripcion</li>
+      <li><span>Numero de Grua</span></li>
+      <li><span>Tipo</span></li>
+      <li><span>Descripcion</span></li>
       <li></li>
     </ul>
   </div>
@@ -19,5 +22,5 @@
       </ul>
     </div>
   <% end %>
-  <%= link_to 'Nueva Grua', new_truck_path %>
+
 </div>

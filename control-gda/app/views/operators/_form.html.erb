@@ -1,0 +1,20 @@
+
+<%= form_for @operator do |f| %>
+<div class="list2">
+  <div class="field">
+    <li>Nombre: </li>
+    <li><%= f.text_field :name %></li>
+  </div>
+  <div class="field">
+    <li>Apellidos: </li>
+    <li><%= f.text_field :lastname %></li>
+  </div>
+
+</div>
+<div class="registrar-izq">
+  <div class="field">
+    <%= submit_tag("Finalizar") %>
+    <%= link_to 'Atras', operators_path %>
+  </div>
+</div>
+<%end%>

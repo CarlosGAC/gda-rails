@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 <h2 class="h2-sign">Kilometrajes</h2>
+<div class="SN-contenedor">
+  <%= link_to 'Nuevo Kilometraje', new_route_path %>
+</div>
 <div class="routes-contenedor">
   <div class="list1">
     <ul>
-      <li>Nombre</li>
-      <li>Kilometros</li>
+      <li><span>Nombre</span></li>
+      <li><span>Kilometros</span></li>
     </ul>
   </div>
   <% @routes.each do |route| %>
@@ -12,11 +15,11 @@
       <ul>
         <li><%= route.name %></li>
         <li><%= route.kilometers %></li>
-        <li><%= link_to 'Mostrar detalle', route %></li>
+        <!-- <li><%= link_to 'Mostrar detalle', route %></li> -->
         <li><%= link_to 'Editar', edit_route_path(route) %></li>
         <!-- <%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %> -->
       </ul>
     </div>
   <% end %>
-  <%= link_to 'Nueva Ruta', new_route_path %>
+
 </div>

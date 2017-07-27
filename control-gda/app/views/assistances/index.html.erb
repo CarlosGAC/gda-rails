@@ -22,7 +22,11 @@
   <%= f.search_field :service_operator_name_cont, placeholder: 'Operador' %>
   <%= f.search_field :service_truck_number_cont, placeholder: 'Grua' %>
 
-  <%= f.submit "Buscar"%>
+  <div class="SN-contenedor">
+    <%= f.submit "Buscar"%>
+    <%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
+  </div>
+
   <%end%>
   <%if @assistance.any? %>
   <div class="resultado-assistances">
@@ -49,5 +53,5 @@
     <p>No hay asistencias registradas el día de hoy.</p>
     <%end%>
   </div>
-  <%= link_to 'Nuevo servicio de asistencia', new_assistance_path %>
+
 </div>

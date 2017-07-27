@@ -38,12 +38,12 @@
         <div class="field">
           <ul>
             <li>Tipo de servicio:</li>
-            <li class="bigger-li"><%= f.radio_button(:service_type, "local") %> Local | <%= f.radio_button(:service_type, "foraneo") %> Foraneo</li>
+            <li class="bigger-li"><%= f.radio_button(:service_type, "local") %> Local  <%= f.radio_button(:service_type, "foraneo") %> Foraneo</li>
           </ul>
         </div>
         <div class="field">
           <ul>
-            <li>Numero de grua:</li>
+            <li>Numero de inventario:</li>
             <li><%= f.text_field :number %></li>
           </ul>
         </div>
@@ -69,12 +69,10 @@
         </div>
       </div>
     </div>
-    <div class="registrar">
+    <div class="registrar-cen">
       <div class="field">
-        <div class="actions">
-          <%= f.submit %>
-          <%= link_to 'Atras', inventories_path %>
-        </div>
+        <%= submit_tag("Finalizar") %>
+        <%= link_to 'Atras', inventories_path %>
       </div>
     </div>
   </div>

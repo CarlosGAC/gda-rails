@@ -2,7 +2,6 @@
 
     <div class="list2">
       <ul>
-
         <div class="field">
           <li>Numero de Grua</li>
           <li>  <%= f.text_field :number %></li>
@@ -19,7 +18,8 @@
           <li>  <%= f.text_area :description %></li>
         </div>
         <div class="field">
-          <li>  <%= submit_tag("Ingresar Grua") %></li>
+          <%= submit_tag("Finalizar") %>
+          <%= link_to 'Atras', trucks_path %>
         </div>
       </ul>
     </div>

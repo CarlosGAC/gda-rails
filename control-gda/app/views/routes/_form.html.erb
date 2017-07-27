@@ -12,21 +12,19 @@
   <% end %>
 
   <div class="list2">
-    <ul>
       <div class="field">
-        <li>Nombre</li>
+        <li>Nombre: </li>
         <li><%= f.text_field :name %></li>
       </div>
       <div class="field">
-        <li>Kilometros</li>
+        <li>Kilometros: </li>
         <li><%= f.text_field :kilometers %></li>
       </div>
-      <div class="field">
-        <div class="actions">
-          <%= f.submit %>
+      <div class="registrar-izq">
+        <div class="field">
+          <%= submit_tag("Finalizar") %>
           <%= link_to 'Atras', routes_path %>
         </div>
       </div>
-    </ul>
   </div>
 <% end %>

@@ -1,4 +1,7 @@
 <h2 class="h2-sign">Operadores</h2>
+<div class="SN-contenedor">
+  <%= link_to 'Nuevo Operador', new_operator_path %>
+</div>
 <div class="operators-contenedor">
 
   <% @operators.each do |operator| %>
@@ -9,5 +12,5 @@
       </ul>
   </div>
   <% end %>
-  <%= link_to 'Nuevo Operador', new_operator_path %>
+
 </div>

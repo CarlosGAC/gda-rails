@@ -18,7 +18,10 @@
   <%= f.search_field :service_operator_name_cont, placeholder: 'Operador' %>
   <%= f.search_field :service_truck_number_cont, placeholder: 'Grua' %>
 
-  <%= f.submit "Buscar"%>
+  <div class="SN-contenedor">
+    <%= f.submit "Buscar"%>
+    <%= link_to 'Nuevo Inventario', new_inventory_path %>
+  </div>
   <%end%>
 
   <div class="resultado-inventories">
@@ -32,7 +35,7 @@
       <div class="campo_data2"><%= inventory.maneuver %></div>
       <div class="campo_data"><span>Tipo de servicio: </span></div>
       <div class="campo_data2"><%= inventory.service_type %></div>
-      <div class="campo_data"><span>Numero de grua: </span></div>
+      <div class="campo_data"><span>Numero de inventario: </span></div>
       <div class="campo_data2"><%= inventory.number %></div>
       <div class="campo_data"><span>Lugar de partida: </span></div>
       <div class="campo_data2"><%= inventory.departure_place %></div>
@@ -41,12 +44,12 @@
       <div class="campo_data"><span>Nombre del conductor: </span></div>
       <div class="campo_data2"><%= inventory.driver_name %></div>
       <div class="detail">
-        <%= link_to 'Mostrar', inventory %>
+        <%= link_to 'Mostrar detalle', inventory %>
         <%= link_to 'Editar', edit_inventory_path(inventory) %>
         <!-- <%= link_to 'Borrar', inventory, method: :delete, data: { confirm: 'Are you sure?' } %> -->
       </div>
     </div>
     <% end %>
   </div>
-  <%= link_to 'Nuevo Inventario', new_inventory_path %>
+
 </div>

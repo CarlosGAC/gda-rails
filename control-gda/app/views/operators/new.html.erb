@@ -1,22 +1,3 @@
 <h2 class="h2-sign">Nuevo Operador</h2>
-<%= form_for @operator do |f| %>
-  <div class="left">
-    <ul>
-      <li>
-        <div class="field">
-          <h4>Nombre: </h4> <%= f.text_field :name %>
-          <h4>Apellidos: </h4> <%= f.text_field :lastname %>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="rigth">
-    <ul>
-      <li>
-        <div class="field">
-          <%= submit_tag("Ingresar Operador") %>
-        </div>
-      </li>
-    </ul>
-  </div>
-<%end%>
+
+<%= render 'form' %>
