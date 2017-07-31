@@ -11,15 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :kilometers %><br>
-    <%= f.text_field :kilometers %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="list2">
+      <div class="field">
+        <li>Nombre: </li>
+        <li><%= f.text_field :name %></li>
+      </div>
+      <div class="field">
+        <li>Kilometros: </li>
+        <li><%= f.text_field :kilometers %></li>
+      </div>
+      <div class="registrar-izq">
+        <div class="field">
+          <%= submit_tag("Finalizar") %>
+          <%= link_to 'Atras', routes_path %>
+        </div>
+      </div>
   </div>
 <% end %>

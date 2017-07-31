@@ -1,16 +1,26 @@
-<h2>Gruas</h2>
+<h2 class="h2-sign">Gruas</h2>
+<div class="SN-contenedor">
+  <%= link_to 'Nueva Grua', new_truck_path %>
+</div>
 <div class="trucks-contenedor">
 
-  <%= link_to 'Nueva Grua', new_truck_path %>
-
+  <div class="list1">
+    <ul>
+      <li><span>Numero de Grua</span></li>
+      <li><span>Tipo</span></li>
+      <li><span>Descripcion</span></li>
+      <li></li>
+    </ul>
+  </div>
   <% @trucks.each do |truck| %>
     <div class="list1">
       <ul>
         <li><%= truck.number %></li>
-        <li><%= truck.classification %> :  </li>
+        <li><%= truck.classification %></li>
         <li><%= truck.description %></li>
         <li><%= link_to 'Editar', edit_truck_path(truck) %></li>
       </ul>
     </div>
   <% end %>
+
 </div>

@@ -3,11 +3,14 @@
 @import '../layout/layout.styl'
 @import '../theme/color.styl'
 
+#header
+  width: 100%;
+
 body
   background-color $white_base;
   font-family 'Open Sans', sans-serif;
   height 100%;
-  min-width 600px;
+  min-width 700px;
 
 h1
   font-size 3em;
@@ -17,16 +20,37 @@ h2
 
 h3
   font-size 1em;
+h4
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0;
+  width: 100px;
 
 p
   font-size 2em;
 
 select
-  min-width 50px;
+  min-width 80px;
 
 textarea
   min-width 250px;
   max-width 750px;
+
+// .sign span
+//   color: $blue_logo;
+//   font-weight: 500;
+//
+// .S_A span
+//   color: $blue_logo;
+//   font-weight: 500;
+
+span
+  color: $blue_logo;
+  font-weight: 500;
+
+.list1 span
+  font-size: 1em
+  font-weight: 500;
 
 #logo
   display inline-block;
@@ -38,11 +62,11 @@ textarea
   display inline-block;
   margin-left 15%;
   margin-right auto;
-  width 30%
+  width 40%
 
 .contenedor
   height: 100vh;
-  margin 100px 10% auto 10%;
+  margin 50px 10% auto 10%;
   width 80%;
 
 .welcome-contenedor
@@ -57,11 +81,11 @@ textarea
   align-items: flex-start;
   flex-direction: column;
 
-.new_operator
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: column;
+// .new_operator
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: flex-start;
+//   flex-direction: column;
 
 .trucks-contenedor
   display: flex;
@@ -80,6 +104,10 @@ textarea
   align-items: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
+
+
+.sort_link
+  margin: 20px 0 40px 0;
 
 .resultado-services
   display: flex;
@@ -105,11 +133,39 @@ textarea
   flex-direction: row;
   justify-content: space-between;
 
-// .new_assistance
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: flex-start;
-//   flex-direction: column;
+  // .new_assistance
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   align-items: flex-start;
+  //   flex-direction: column;
+
+.inventories-contenedor
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+.resultado-inventories
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+.routes-contenedor
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+.new_route
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+
+// .service_search input[type=submit], .assistance_search input[type=submit], .inventory_search input[type=submit]
+//   display: block;
+//   margin-bottom: 20px
 
 // Para que los botones de la pagina del index tengan el mismo tamaño
 .index_button
@@ -133,8 +189,8 @@ textarea
   list-style: none;
   padding-left: 0;
 
-.operators-contenedor > a
-  margin-bottom: 20px;
+.operators-contenedor > a, .trucks-contenedor > a, .routes-contenedor
+  margin-top: 20px;
 
 .list1 ul
   display: flex;
@@ -155,6 +211,24 @@ textarea
     min-width: 350px;
   &:last-child
     margin-left: 10px;
+
+.trucks-contenedor > .list1 li
+  list-style: none;
+  font-size: 1.5em;
+  min-width: 100px;
+  &:first-child
+    min-width: 200px;
+  &:nth-child(3)
+    min-width: 150px;
+  &:last-child
+    margin-left: 10px;
+
+.routes-contenedor > .list1 li
+  list-style: none;
+  font-size: 1.5em;
+  min-width: 150px;
+  &:last-child
+     width: auto;
 
 .list1 li > a
   font-size: 1em;
@@ -186,6 +260,16 @@ textarea
   font-size: 1em;
   width: 250px
 
+.list3 li input[type=radio]
+  width: 20px;
+
+.list3 select
+  margin: 5px 5px 5px 0;
+
+.bigger-li
+  //height: 42px;
+  padding: 7px 0px;
+
 .columnas
   display: flex;
   flex-wrap: wrap;
@@ -195,28 +279,39 @@ textarea
 .column1, .column2, .column3
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:  flex-start;
 
-.registrar
+.registrar-izq
+  display: flex;
+  justify-content: flex-start;
+
+.registrar-cen
   display: flex;
   justify-content: center;
 
 .field
-  width: 250px;
+  //width: 250px;
+  width: 350px;
 
 // Estas son la barras de buscar de services y assistance
-.campo_data, .s_data2
-  padding-top: 0.2em;
+.campo_data, .campo_data2
+  padding: 0.3em 0;
+  border-bottom: solid;
+  border-bottom-color: $gray_border;
+  border-width: 1px;
+  // 0.2em; //antes
+  //width: 150px
 
 .campo_data
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
 
-  border-right: solid;
+
+  //border-right: solid;
   border-width: 1px;
   padding-right 2.5%;
-  width 100px;
+  width 200px;
 
 .campo_data2
   display: flex;
@@ -224,27 +319,39 @@ textarea
   flex-flow: wrap;
 
   padding-left: 2.5%;
-  width: 200px;
+  width: 100px;
 
 .detail a
   font-size 1em;
   padding 7px 10px;
+
+.SN-contenedor
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px
+
 
 .S_A
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
 
+  //min-width: 100px;
   max-width: 300px;
   margin-bottom: 10px;
-
+  margin-right: 20px;
 
 .S_A > .detail
   display: flex;
   align-self: center;
 
-  margin: 0 10% 0 10%;
+  margin: 10px 10% 0 10%;
+  //margin: 10px 0 0 0;
   padding: 7px 2px;
+
+
+
 
 .mas_detalles
   display: flex;
@@ -268,7 +375,7 @@ textarea
   //align-self: center;
 
 .detalle-b
-  width: 320px;
+  //width: 320px;
   align-self: center;
   margin: 40px 0;
 
@@ -276,6 +383,12 @@ textarea
   color: $blue_logo;
   font-size 1.1em;
   font-weight: 500;
+
+
+
+.h2-sign
+  text-align: center;
+
 
 #map-container
   width: 100%;

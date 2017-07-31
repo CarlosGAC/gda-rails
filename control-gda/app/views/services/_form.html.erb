@@ -24,16 +24,16 @@
         <div class="left">
           <ul>
             <li>Nombre del cliente:</li>
-            <li> <%= s.text_field :client, placeholder: "Cliente" %></li>
+            <li> <%= s.text_field :client %></li>
           </ul>
         </div>
       </div>
-      
+
       <div class="field">
         <div class="left">
           <ul>
             <li>Ubicación: </li>
-            <li><%= s.text_field :ubication, placeholder: "Ubicación" %></li>
+            <li><%= s.text_field :ubication %></li>
           </ul>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <div class="left">
           <ul>
             <li>Destino:</li>
-            <li> <%= s.text_field :destiny, placeholder: "Destino" %></li>
+            <li> <%= s.text_field :destiny %></li>
           </ul>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <div class="left">
           <ul>
             <li>Marca:</li>
-            <li> <%= s.text_field :brand, placeholder: "Marca" %></li>
+            <li> <%= s.text_field :brand %></li>
           </ul>
         </div>
       </div>
@@ -93,7 +93,7 @@
         <div class="left">
           <ul>
             <li>Tipo:</li>
-            <li> <%= s.text_field :car_type, placeholder: "Tipo" %></li>
+            <li> <%= s.text_field :car_type %></li>
           </ul>
         </div>
       </div>
@@ -101,7 +101,7 @@
         <div class="left">
           <ul>
             <li>Modelo:</li>
-            <li> <%= s.text_field :model, placeholder: "Modelo" %></li>
+            <li> <%= s.text_field :model %></li>
           </ul>
         </div>
       </div>
@@ -109,7 +109,7 @@
         <div class="left">
           <ul>
             <li>Color: </li>
-            <li><%= s.text_field :color, placeholder: "Color" %></li>
+            <li><%= s.text_field :color %></li>
           </ul>
         </div>
       </div>
@@ -117,18 +117,17 @@
         <div class="left">
           <ul>
             <li>Placas:</li>
-            <li> <%= s.text_field :licence_plates, placeholder: "Placas" %></li>
+            <li> <%= s.text_field :licence_plates %></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="registrar">
+  <div class="registrar-cen">
     <div class="field">
       <div class="left">
-        <ul>
-          <li><%= submit_tag("Registrar servicio") %></li>
-        </ul>
+          <%= submit_tag("Finalizar") %>
+          <%= link_to 'Atras', services_path %>
       </div>
     </div>
   </div>

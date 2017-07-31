@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
+<div class="mas_detalles">
+  <div class="detalles">
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @route.name %>
-</p>
-
-<p>
-  <strong>Kilometros:</strong>
-  <%= @route.kilometers %>
-</p>
-
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+    <div class="detalle"><p><span>Nombre: </span><%= @route.name %></p></div>
+    <div class="detalle"><p><span>Kilometros: </span><%= @route.kilometers %></p></div>
+  </div>
+  <div class="detalle-b">
+    <%= link_to 'Editar', edit_route_path(@route) %>
+    <%= link_to 'Atras', routes_path %>
+  </div>
+</div>

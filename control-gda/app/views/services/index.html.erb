@@ -1,6 +1,5 @@
-<h2>Servicios</h2>
+<h2 class="h2-sign">Servicios</h2>
 <div class="services-contenedor">
-  <%= link_to 'Nuevo servicio', new_service_path %>
 
   <%= search_form_for @q do |f| %>
 
@@ -21,7 +20,11 @@
   Hasta
   <%= f.date_field :date_lteq, placeholder: 'Fecha final', :id => 'df_end' %>
 
-  <%= f.submit "Buscar"%>
+  <div class="SN-contenedor">
+    <%= f.submit "Buscar"%>
+    <%= link_to 'Nuevo servicio', new_service_path %>
+  </div>
+
   <%end%>
 
   <tr>
@@ -31,33 +34,23 @@
   <div class="resultado-assistances">
     <% @service.each do |s| %>
     <div class="S_A">
-      <div class="campo_data">Fecha:
-      </div>
-      <div class="campo_data2">
-        <%= s.date %></div>
-      <div class="campo_data">Hora:
-      </div>
-      <div class="campo_data2">
-        <%= s.hour.strftime('%I:%M:%S %p') %></div>
-      <div class="campo_data">Cliente:
-      </div>
-      <div class="campo_data2">
-        <%= s.client %></div>
-      <div class="campo_data">Operador:
-      </div>
-      <div class="campo_data2">
-        <%= s.operator.name %></div>
-      <div class="campo_data">Ubicacion:
-      </div>
-      <div class="campo_data2">
-        <%= s.ubication %></div>
-      <div class="campo_data">Destino:
-      </div>
-      <div class="campo_data2">
-        <%= s.destiny %></div>
+      <div class="campo_data"><span>Fecha: </span></div>
+      <div class="campo_data2"><%= s.date %></div>
+      <div class="campo_data"><span>Hora: </span></div>
+      <div class="campo_data2"><%= s.hour.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data"><span>Cliente: </span></div>
+      <div class="campo_data2"><%= s.client %></div>
+      <div class="campo_data"><span>Operador: </span></div>
+      <div class="campo_data2"><%= s.operator.name %></div>
+      <div class="campo_data"><span>Ubicacion: </span></div>
+      <div class="campo_data2"><%= s.ubication %></div>
+      <div class="campo_data"><span>Destino: </span></div>
+      <div class="campo_data2"><%= s.destiny %></div>
 
-      <div class="detail"><%= link_to 'Mostrar a detalle', s, method: :get %>
-      <%= link_to 'Generar PDF', service_path(s, :format => 'pdf'), target: "_blank" %></div>
+      <div class="detail">
+        <%= link_to 'Mostrar detalle', s, method: :get %>
+        <%= link_to 'Generar PDF', service_path(s, :format => 'pdf'), target: "_blank" %>
+      </div>
 
     </div>
     <% end %>
@@ -66,4 +59,5 @@
     <p>No hay servicios registrados el día de hoy.</p>
     <% end %>
   </div>
+
 </div>

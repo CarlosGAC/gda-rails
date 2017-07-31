@@ -1,21 +1,3 @@
-<%= form_for @operator do |f| %>
-<div class="left">
-  <ul>
-    <li>
-      <div class="field">
-        <%= f.text_field :name, placeholder: "Nombre" %>
-        <%= f.text_field :lastname, placeholder: "Apellidos" %>
-      </div>
-    </li>
-  </ul>
-</div>
-<div class="rigth">
-  <ul>
-    <li>
-      <div class="field">
-        <%= submit_tag("Finalizar") %>
-      </div>
-    </li>
-  </ul>
-</div>
-<%end%>
+<h2 class="h2-sign">Editar Operador</h2>
+
+<%= render 'form' %>

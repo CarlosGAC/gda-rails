@@ -6,8 +6,8 @@
     <div class="detalles">
 
       <div class="detalle"><p><span>Numero de Inventario:</span> <%= @inventory.number %></p></div>
-      <div class="detalle"><p><span>Fecha:</span> <%= @inventory.number %></p></div>
-      <div class="detalle"><p><span>Hora:</span> <%= @inventory.number %></p></div>
+      <div class="detalle"><p><span>Fecha:</span> <%= @inventory.service.date %></p></div>
+      <div class="detalle"><p><span>Hora:</span> <%= @inventory.service.hour %></p></div>
       <div class="detalle"><p><span>Grua:</span> <%= @inventory.service.truck.number %></p></div>
       <div class="detalle"><p><span>Operador:</span> <%= @inventory.service.operator.name %></p></div>
       <div class="detalle"><p><span>Maniobras:</span> <%= @inventory.maneuver %></p></div>
@@ -23,8 +23,8 @@
       <div class="detalle"><p><span>Lugar de Siniestro:</span> <%= @inventory.sinister_place %></p></div>
     </div>
     <div class="detalle-b">
-      <%= link_to 'Edit', edit_inventory_path(@inventory) %>
-      <%= link_to 'Back', inventories_path %>
+      <%= link_to 'Editar', edit_inventory_path(@inventory) %>
+      <%= link_to 'Atras', inventories_path %>
     </div>
 
   </div>
