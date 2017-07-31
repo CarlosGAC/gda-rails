@@ -6,7 +6,6 @@
   <%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
   <%= f.search_field :ubication_cont, placeholder: 'Ubicación' %>
   <%= f.search_field :destiny_cont, placeholder: 'Destino' %>
-  <%= f.search_field :inventary_num_cont, placeholder: 'Número de inventario' %>
   <%= f.search_field :keys_num_cont, placeholder: 'Número de llaves' %>
   <%= f.search_field :brand_cont, placeholder: 'Marca' %>
   <%= f.search_field :car_type_cont, placeholder: 'Tipo' %>
@@ -37,7 +36,7 @@
       <div class="campo_data"><span>Fecha: </span></div>
       <div class="campo_data2"><%= s.date %></div>
       <div class="campo_data"><span>Hora: </span></div>
-      <div class="campo_data2"><%= s.hour.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data2"><%= s.hour%></div>
       <div class="campo_data"><span>Cliente: </span></div>
       <div class="campo_data2"><%= s.client %></div>
       <div class="campo_data"><span>Operador: </span></div>

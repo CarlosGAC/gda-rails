@@ -28,13 +28,13 @@ trucks_list.each do |number, classification, description|
 end
 
 service_list = [
-  ["2016-07-19","2000-01-01 23:12:00","Usuario","Colima","Guadalajara","1234","19","Chevrolet","Aveo","Rojo","JBC2180","2012", 3, 1,1],
-  ["2016-05-02","2000-01-01 02:15:00","PGR","Ciudad Guzman","Autlan","2534","1","Ford","Focus","Rojo","JAD2121","2005", 1, 2,2],
-  ["2016-05-02","2000-01-01 02:15:00","PGR","Autlan","Zapotiltic","2534","1","Ford","Focus","Rojo","JAD2121","2005", 1, 2,3]
+  ["2016-07-19","2000-01-01 23:12:00","Usuario","Colima","Guadalajara","19","Chevrolet","Aveo","Rojo","JBC2180","2012", 3, 1,1],
+  ["2016-05-02","2000-01-01 02:15:00","PGR","Ciudad Guzman","Autlan","1","Ford","Focus","Rojo","JAD2121","2005", 1, 2,2],
+  ["2016-05-02","2000-01-01 02:15:00","PGR","Autlan","Zapotiltic","1","Ford","Focus","Rojo","JAD2121","2005", 1, 2,3]
 ]
 
 service_list.each do |date, hour, client, ubication, destiny, inventary_num, keys_num, brand, car_type, color, licence_plates, model, operator_id, truck_id, assistance_id|
-  Service.create(date: date, hour: hour, client: client, ubication: ubication, destiny: destiny, inventary_num: inventary_num, keys_num: keys_num, brand: brand, car_type: car_type, color: color, licence_plates: licence_plates, model: model, operator_id: operator_id, truck_id: truck_id, assistance_id: assistance_id)
+  Service.create(date: date, hour: hour, client: client, ubication: ubication, destiny: destiny, keys_num: keys_num, brand: brand, car_type: car_type, color: color, licence_plates: licence_plates, model: model, operator_id: operator_id, truck_id: truck_id, assistance_id: assistance_id)
 end
 
 assistance_list = [

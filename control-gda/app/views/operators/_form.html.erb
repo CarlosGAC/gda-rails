@@ -1,3 +1,10 @@
+<% if @operator.errors.any? %>
+  <div id="error_explanation">
+    <% @operator.errors.full_messages.each do |msg| %>
+      <div class="alert alert-error">Error: <%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= form_for @operator do |f| %>
 <div class="list2">

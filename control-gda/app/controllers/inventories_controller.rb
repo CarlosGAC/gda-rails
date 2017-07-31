@@ -17,6 +17,7 @@ class InventoriesController < ApplicationController
   # GET /inventories/new
   def new
     @inventory = Inventory.new
+    @inventory.build_service
   end
 
   # GET /inventories/1/edit
@@ -26,19 +27,14 @@ class InventoriesController < ApplicationController
   # POST /inventories
   # POST /inventories.json
   def create
-    @inventory = Inventory.new(
-    authority: params[:inventory][:authority],
-    serial: params[:inventory][:serial],
-    maneuver: params[:inventory][:maneuver],
-    service_type: params[:inventory][:service_type],
-    number: params[:inventory][:number],
-    departure_place: params[:inventory][:departure_place],
-    sinister_place: params[:inventory][:sinister_place],
-    driver_name: params[:inventory][:driver_name]
-    )
+    @inventory = Inventory.new(inventory_params)
+    Rails.logger.debug("My object: #{@inventory.number} == #{@inventory.inspect}")
+    Rails.logger.debug("My object2: #{}")
     if @inventory.save
       flash[:notice] = "Inventario creado satisfactoriamente"
       redirect_to @inventory
+    else
+      render :new, error: "Error: El operador no pudo crearse satisfactoriamente"
     end
   end
 
@@ -46,16 +42,7 @@ class InventoriesController < ApplicationController
   # PATCH/PUT /inventories/1.json
   def update
     @inventory = Inventory.find(params[:id])
-    if @inventory.update(
-      authority: params[:inventory][:authority],
-      serial: params[:inventory][:serial],
-      maneuver: params[:inventory][:maneuver],
-      service_type: params[:inventory][:service_type],
-      number: params[:inventory][:number],
-      departure_place: params[:inventory][:departure_place],
-      sinister_place: params[:inventory][:sinister_place],
-      driver_name: params[:inventory][:driver_name]
-      )
+    if @inventory.update(inventory_params)
       redirect_to @inventory, edit: "Inventario editado safistactoriamente"
     else
       render :edit, error: "Error: El inventario no se pudo editar satisfactoriamente"
@@ -80,6 +67,35 @@ class InventoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
-      params.require(:inventory).permit(:authority, :serial, :maneuver, :service_type, :number, :departure_place, :sinister_place, :driver_name)
+      params.require(:inventory).permit(
+      :authority,
+      :serial,
+      :maneuver,
+      :service_type,
+      :number,
+      :departure_place,
+      :sinister_place,
+      :driver_name,
+      :service_id,
+      :service_attributes => [
+          :id,
+          :date,
+          :hour,
+          :client,
+          :ubication,
+          :destiny,
+          :operator,
+          :truck,
+          :inventary_num,
+          :brand,
+          :car_type,
+          :model,
+          :color,
+          :licence_plates,
+          :keys_num,
+          :operator_id,
+          :truck_id,
+          :assistance_id
+      ])
     end
 end

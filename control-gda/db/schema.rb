@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20170723204336) do
     t.string   "client"
     t.string   "ubication"
     t.string   "destiny"
-    t.string   "inventary_num"
     t.string   "keys_num"
     t.string   "brand"
     t.string   "car_type"
