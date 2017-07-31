@@ -14,7 +14,7 @@
 <p><span>Número de servicio:</span> <%= @assistance.service.id %></p>
 <p><span>Compañía:</span> <%= @assistance.service.client %></p>
 <p><span>Fecha:</span> <%= @assistance.service.date %></p>
-<p><span>Hora:</span> <%= @assistance.service.hour.strftime('%I:%M:%S %p') %></p>
+<p><span>Hora:</span> <%= @assistance.service.hour %></p>
 <p><span>Numero de expediente:</span> <%= @assistance.record_number %></p>
 <p><span>Quien autoriza:</span> <%= @assistance.company_user %></p>
 <p><span>Marca:</span> <%= @assistance.service.brand %></p>
@@ -25,8 +25,8 @@
 <p><span>Nombre del afiliado:</span> <%= @assistance.affiliate_name %></p>
 <p><span>Afiliado paga:</span> <%= @assistance.affiliate_pays %>$</p>
 <p><span>Compañía paga:</span> <%= @assistance.company_pays %>$</p>
-<p><span>Contacto:</span> <%= @assistance.contact_time.strftime('%I:%M:%S %p') %></p>
-<p><span>Termino:</span> <%= @assistance.end_time.strftime('%I:%M:%S %p') %></p>
+<p><span>Contacto:</span> <%= @assistance.contact_time %></p>
+<p><span>Termino:</span> <%= @assistance.end_time %></p>
 <p><span>Operador:</span> <%= @assistance.service.operator.name %></p>
 <p><span>Grúa:</span> <%= @assistance.service.truck.number %></p>
 <p><span>Quien cotizo:</span> <%= @assistance.who_quoted %></p>

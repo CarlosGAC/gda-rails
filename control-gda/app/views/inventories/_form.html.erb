@@ -1,79 +1,192 @@
-<%= form_for(@inventory) do |f| %>
-  <% if @inventory.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
-
-      <ul>
-      <% @inventory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="list3">
-    <!-- <h2 class="h2-sign">Nuevo Inventario</h2> -->
-    <div class="columnas">
-      <div class="column1">
-        <div class="field">
-          <ul>
-            <li>Autoridad que envia:</li>
-            <li><%= f.text_field :authority %></li>
-          </ul>
-        </div>
-        <div class="field">
-          <ul>
-            <li>Numero de serie/Motor:</li>
-            <li><%= f.text_field :serial %></li>
-          </ul>
-        </div>
-        <div class="field">
-          <ul>
-            <li>Maniobras:</li>
-            <li><%= f.text_field :maneuver %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="column2">
-        <div class="field">
-          <ul>
-            <li>Tipo de servicio:</li>
-            <li class="bigger-li"><%= f.radio_button(:service_type, "local") %> Local  <%= f.radio_button(:service_type, "foraneo") %> Foraneo</li>
-          </ul>
-        </div>
-        <div class="field">
-          <ul>
-            <li>Numero de inventario:</li>
-            <li><%= f.text_field :number %></li>
-          </ul>
-        </div>
-        <div class="field">
-          <ul>
-            <li>Lugar de partida:</li>
-            <li><%= f.text_field :departure_place %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="column3">
-        <div class="field">
-          <ul>
-            <li>Lugar de siniestro:</li>
-            <li><%= f.text_field :sinister_place %></li>
-          </ul>
-        </div>
-        <div class="field">
-          <ul>
-            <li>Nombre del conductor:</li>
-            <li><%= f.text_field :driver_name %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="registrar-cen">
-      <div class="field">
-        <%= submit_tag("Finalizar") %>
-        <%= link_to 'Atras', inventories_path %>
-      </div>
-    </div>
+<% if @inventory.errors.any? %>
+  <div id="error_explanation">
+    <% @inventory.errors.full_messages.each do |msg| %>
+      <div class="alert alert-error">Error: <%= msg %></div>
+    <% end %>
   </div>
 <% end %>
+
+<%= form_for(@inventory) do |f| %>
+  <%= f.fields_for :service do |serv| %>
+    <div class="list3">
+      <h2 class="h2-sign">Campos inventario</h2>
+      <div class="columnas">
+        <div class="column1">
+          <div class="field">
+            <ul>
+              <li>Autoridad que envia:</li>
+              <li><%= f.text_field :authority %></li>
+            </ul>
+          </div>
+          <div class="field">
+            <ul>
+              <li>Numero de serie/Motor:</li>
+              <li><%= f.text_field :serial %></li>
+            </ul>
+          </div>
+          <div class="field">
+            <ul>
+              <li>Maniobras:</li>
+              <li><%= f.text_field :maneuver %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="field">
+            <ul>
+              <li>Tipo de servicio:</li>
+              <li class="bigger-li"><%= f.radio_button(:service_type, "local") %> Local  <%= f.radio_button(:service_type, "foraneo") %> Foraneo</li>
+            </ul>
+          </div>
+          <div class="field">
+            <ul>
+              <li>Numero de inventario:</li>
+              <li><%= f.text_field :number%></li>
+            </ul>
+          </div>
+          <div class="field">
+            <ul>
+              <li>Lugar de partida:</li>
+              <li><%= f.text_field :departure_place %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="column3">
+          <div class="field">
+            <ul>
+              <li>Lugar de siniestro:</li>
+              <li><%= f.text_field :sinister_place %></li>
+            </ul>
+          </div>
+          <div class="field">
+            <ul>
+              <li>Nombre del conductor:</li>
+              <li><%= f.text_field :driver_name %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h2 class="h2-sign">Campos servicio</h2>
+      <%# NEW SERVICE FORM FIELDS %>
+      <div class="columnas">
+        <div class="column1">
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Fecha:</li>
+                <li> <%= serv.date_field :date, :value => current_page?(:action => 'new') ? Time.now.strftime('%Y-%m-%d') : nil %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Hora:</li>
+                <li> <%= serv.time_field :hour %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Nombre del cliente:</li>
+                <li> <%= serv.text_field :client %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Ubicación:</li>
+                <li><%= serv.text_field :ubication %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Destino:</li>
+                <li> <%= serv.text_field :destiny %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Operador:</li>
+                <li><%= serv.collection_select :operator_id, Operator.all, :id, :name %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Grua:</li>
+                <li><%= serv.collection_select :truck_id, Truck.all, :id, :number %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Número de llaves:</li>
+                <li><%= serv.number_field :keys_num %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Marca:</li>
+                <li> <%= serv.text_field :brand %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column3">
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Tipo:</li>
+                <li> <%= serv.text_field :car_type %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Modelo:</li>
+                <li> <%= serv.text_field :model %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Color:</li>
+                <li><%= serv.text_field :color %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <div class="left">
+              <ul>
+                <li>Placas:</li>
+                <li> <%= serv.text_field :licence_plates %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+      <div class="registrar-cen">
+        <div class="field">
+          <%= submit_tag("Finalizar") %>
+          <%= link_to 'Atras', inventories_path %>
+        </div>
+      </div>
+    </div>
+  <% end %>

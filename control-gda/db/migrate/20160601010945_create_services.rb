@@ -6,7 +6,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :client
       t.string :ubication
       t.string :destiny
-      t.string :inventary_num
+      #t.string :inventary_num
       t.string :keys_num
       t.string :brand
       t.string :car_type

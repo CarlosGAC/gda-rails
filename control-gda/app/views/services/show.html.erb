@@ -3,13 +3,13 @@
 
     <div class="detalle"><p><span>Numero de servicio: </span>#<%=@service.id %></p></div>
     <div class="detalle"><p><span>Fecha:</span> <%= @service.date %></p></div>
-    <div class="detalle"><p><span>Hora:</span> <%= @service.hour.strftime('%I:%M:%S %p') %></p></div>
+    <div class="detalle"><p><span>Hora:</span> <%= @service.hour%></p></div>
     <div class="detalle"><p><span>Cliente:</span> <%= @service.client %></p></div>
     <div class="detalle"><p><span>Grua:</span> <%= @service.truck.number %></p></div>
     <div class="detalle"><p><span>Operador:</span> <%= @service.operator.name %></p></div>
     <div class="detalle"><p><span>Ubicacion:</span> <%= @service.ubication %></p></div>
     <div class="detalle"><p><span>Destino:</span> <%= @service.destiny %></p></div>
-    <div class="detalle"><p><span>Numero de inventario:</span> <%= @service.inventary_num %></p></div>
+    <div class="detalle"><p><span>Numero de inventario:</span> <%= @inventory %></p></div>
     <div class="detalle"><p><span>Marca:</span> <%= @service.brand %></p></div>
     <div class="detalle"><p><span>Tipo:</span> <%= @service.car_type %></p></div>
     <div class="detalle"><p><span>Modelo:</span> <%= @service.model %></p></div>

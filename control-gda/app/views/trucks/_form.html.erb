@@ -1,3 +1,11 @@
+<% if @truck.errors.any? %>
+  <div id="error_explanation">
+    <% @truck.errors.full_messages.each do |msg| %>
+      <div class="alert alert-error">Error: <%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+
 <%= form_for @truck do |f| %>
 
     <div class="list2">
