@@ -1,4 +1,20 @@
 <div id="map-container">
+  <input id="pac-input" class="controls" type="text"
+          placeholder="Ingrese una localizacion">
+      <div id="type-selector" class="controls">
+        <input type="radio" name="type" id="changetype-all" checked="checked">
+        <label for="changetype-all">Todo</label>
+
+        <input type="radio" name="type" id="changetype-establishment">
+        <label for="changetype-establishment">Lugares</label>
+
+        <input type="radio" name="type" id="changetype-address">
+        <label for="changetype-address">Direcciones</label>
+
+        <input type="radio" name="type" id="changetype-geocode">
+        <label for="changetype-geocode">Geocodes</label>
+      </div>
   <h2>Mapa de la zona</h2>
   <div id="map"></div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgn8exm35ik44TxPEsloyQcDRIQV-A7MQ&callback=initMap&libraries=places" async defer></script>

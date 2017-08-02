@@ -8,6 +8,7 @@
     <ul>
       <li><span>Nombre</span></li>
       <li><span>Kilometros</span></li>
+      <li><span>Casetas</span></li>
     </ul>
   </div>
   <% @routes.each do |route| %>
@@ -15,6 +16,7 @@
       <ul>
         <li><%= route.name %></li>
         <li><%= route.kilometers %></li>
+        <li><%= route.booth_price %></li>
         <!-- <li><%= link_to 'Mostrar detalle', route %></li> -->
         <li><%= link_to 'Editar', edit_route_path(route) %></li>
         <!-- <%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %> -->
