@@ -10,31 +10,142 @@
 
 <body>
 
-<p><span>Número de asistencia:</span> <%= @assistance.id %></p>
-<p><span>Número de servicio:</span> <%= @assistance.service.id %></p>
-<p><span>Compañía:</span> <%= @assistance.service.client %></p>
-<p><span>Fecha:</span> <%= @assistance.service.date %></p>
-<p><span>Hora:</span> <%= @assistance.service.hour %></p>
-<p><span>Numero de expediente:</span> <%= @assistance.record_number %></p>
-<p><span>Quien autoriza:</span> <%= @assistance.company_user %></p>
-<p><span>Marca:</span> <%= @assistance.service.brand %></p>
-<p><span>Tipo:</span> <%= @assistance.service.car_type %></p>
-<p><span>Modelo:</span> <%= @assistance.service.model %></p>
-<p><span>Color:</span> <%= @assistance.service.color %></p>
-<p><span>Placas:</span> <%= @assistance.service.licence_plates %></p>
-<p><span>Nombre del afiliado:</span> <%= @assistance.affiliate_name %></p>
-<p><span>Afiliado paga:</span> <%= @assistance.affiliate_pays %>$</p>
-<p><span>Compañía paga:</span> <%= @assistance.company_pays %>$</p>
-<p><span>Contacto:</span> <%= @assistance.contact_time %></p>
-<p><span>Termino:</span> <%= @assistance.end_time %></p>
-<p><span>Operador:</span> <%= @assistance.service.operator.name %></p>
-<p><span>Grúa:</span> <%= @assistance.service.truck.number %></p>
-<p><span>Quien cotizo:</span> <%= @assistance.who_quoted %></p>
-<p><span>Ubicación:</span> <%= @assistance.service.ubication %></p>
-<p><span>Destino:</span> <%= @assistance.service.destiny %></p>
-<p><span>Comentarios:</span> <%= @assistance.comments %></p>
+  <img src="C:\Users\Oscar\Documents\GitHub\gda-rails\control-gda\app\assets\images\logo.png" width="150" height="150" align=right>
+  <br>
 
-<p style="float: right; font-size: 12px;">
+  <table border="0" width=100% style="font-size: 18px; font-family: Arial;">
+    <tr height=20></tr>
+    <tr align=right>
+      <td width=30%  bgcolor="#DCDCDC" align=left><b><span>Número de asistencia:</span></b></td><td width=20%  > #<%= @assistance.id %></td>
+      <td width=70%></tr>
+    </tr>
+    <tr height=5></tr>
+    <tr align=right>
+      <td width=30%  bgcolor="#DCDCDC" align=left><b><span>Número de servicio:</span></b></td><td width=20%  > #<%= @assistance.service.id %></td>
+      <td width=70%></tr>
+    </tr>
+    <tr height=35></tr>
+  </table>
+
+  <table  border="0" width=100% style="float: right; font-size: 18px; font-family: Arial;">
+    <tr >
+      <td width=50%></td>
+      <td width=15% bgcolor="#DCDCDC"><b><span>Fecha:</span></b></td><td width=35% > <%= @assistance.service.date %></td>
+    </tr>
+      <tr>
+        <td width=50%></td>
+        <td width=15% bgcolor="#DCDCDC"><b><span>Hora:</span>  </b> </td><td width=35% ><%= @assistance.service.hour %></td>
+      </tr>
+  </table>
+
+  <table border="0" width=100% style="float: right; font-size: 18px; font-family: Arial;">
+    <tr height=40></tr>
+    <tr align=right>
+      <td width=20%  bgcolor="#DCDCDC" align=left><b><span>Compañía:</span></b></td><td width=30% ><%= @assistance.service.client %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Numero de expediente:</span></b></td><td width=30% align=right><%= @assistance.record_number %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Quien autoriza:</span></b></td><td width=30% align=right><%= @assistance.company_user %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Nombre del afiliado:</span></b></td><td width=30% align=right><%= @assistance.affiliate_name %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Quien cotizo:</span>  </b></td><td width=30% align=right><%= @assistance.who_quoted %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Operador:</span> </b></td><td width=30% align=right><%= @assistance.service.operator.name %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Grúa:</span> </b></td><td width=30% align=right> <%= @assistance.service.truck.number %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Ubicación:</span> </b></td><td width=30% align=right><%= @assistance.service.ubication %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Destino:</span></b></td><td width=30% align=right> <%= @assistance.service.destiny %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Marca:</span></b></td><td width=30% align=right> <%= @assistance.service.brand %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Tipo:</span></b></td><td width=30% align=right> <%= @assistance.service.car_type %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Modelo:</span> </b></td><td width=30% align=right><%= @assistance.service.model %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Color:</span>  </b></td><td width=30% align=right><%= @assistance.service.color %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Placas:</span> </b></td><td width=30% align=right><%= @assistance.service.licence_plates %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Afiliado paga:</span></b></td><td width=30% align=right> <%= @assistance.affiliate_pays %>$</td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Compañía paga:</span> </b></td><td width=30% align=right><%= @assistance.company_pays %>$</td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Contacto:</span> </b></td><td width=30% align=right><%= @assistance.contact_time %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Termino:</span></b></td><td width=30% align=right> <%= @assistance.end_time %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Comentarios:</span></b></td><td width=30% align=right> <%= @assistance.comments %></td>
+      <td width=70%></td>
+    </tr>
+      <tr height=10></tr>
+      <tr height=80></tr>
+  </table>
+
+
+
+
+
+
+
+
+<p style="float: right; font-size: 17px; font-family: Arial;">
   <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p>
 </body>
 

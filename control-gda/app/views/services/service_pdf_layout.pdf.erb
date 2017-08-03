@@ -9,21 +9,90 @@
 </head>
 
 <body>
-  <p><span>Numero de servicio: </span>#<%=@service.id %></p>
-  <p><span>Fecha:</span> <%= @service.date %></p></div>
-  <p><span>Hora:</span> <%= @service.hour %></p>
-  <p><span>Cliente:</span> <%= @service.client %></p>
-  <p><span>Grua:</span> <%= @service.truck.number %></p>
-  <p><span>Operador:</span> <%= @service.operator.name %></p>
-  <p><span>Ubicacion:</span> <%= @service.ubication %></p>
-  <p><span>Destino:</span> <%= @service.destiny %></p>
-  <p><span>Marca:</span> <%= @service.brand %></p>
-  <p><span>Tipo:</span> <%= @service.car_type %></p>
-  <p><span>Modelo:</span> <%= @service.model %></p>
-  <p><span>Color:</span> <%= @service.color %></p>
-  <p><span>Placas:</span> <%= @service.licence_plates %></p>
+  <img src="C:\Users\Oscar\Documents\GitHub\gda-rails\control-gda\app\assets\images\logo.png" width="150" height="150" align=right>
+  <br>
 
-<p style="float: right; font-size: 12px;">
+
+  <table border="0" width=100% style="font-size: 18px; font-family: Arial;">
+    <tr height=20></tr>
+    <tr align=right>
+      <td width=30%  bgcolor="#DCDCDC" align=left><b> <span>Numero de servicio: </span></b></td><td width=20%  >#<%=@service.id %></td>
+      <td width=70%></tr>
+    </tr>
+    <tr height=35></tr>
+
+  </table>
+  <table  border="0" width=100% style="float: right; font-size: 18px; font-family: Arial;">
+    <tr >
+      <td width=50%></td>
+      <td width=15% bgcolor="#DCDCDC"><b><span>Fecha:</span></b></td><td width=35% > <%= @service.date %></td>
+    </tr>
+    <tr>
+      <td width=50%></td>
+      <td width=15% bgcolor="#DCDCDC"><b><span>Hora:</span></b> </td><td width=35% ><%= @service.hour %></td>
+    </tr>
+
+  </table>
+  <table border="0" width=100% style="float: right; font-size: 18px; font-family: Arial;">
+    <tr height=40></tr>
+    <tr align=right>
+      <td width=20%  bgcolor="#DCDCDC" align=left><b><span>Cliente:</span></b></td><td width=30% > <%= @service.client %></td>
+      <td width=65%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Operador:</span></b></td><td width=30% align=right> <%= @service.operator.name %></td>
+      <td width=70%></td>
+    </tr>
+    <tr height=10></tr>
+    <tr>
+      <td width=15%  bgcolor="#DCDCDC"><b><span>Grua:</span></b></td><td width=30% align=right> <%= @service.truck.number %></td>
+      <td width=70%></td>
+    </tr>
+
+    <tr height=10></tr>
+  <tr>
+    <td width=15%  bgcolor="#DCDCDC" ><b><span>Ubicacion:</span></b></td><td width=30% align=right> <%= @service.ubication %></td>
+    <td width=70%></td>
+  </tr>
+  <tr height=10></tr>
+  <tr>
+    <td width=15%  bgcolor="#DCDCDC"><b><span>Destino:</span></b></td><td width=30%  align=right> <%= @service.destiny %></td>
+    <td width=70%></td>
+  </tr>
+      <tr height=10></tr>
+  <tr>
+
+  <td width=15%  bgcolor="#DCDCDC" ><b><span>Marca:</span></b></td><td width=30%  align=right> <%= @service.brand %></td>
+  <td width=70%></td>
+</tr>
+<tr height=10></tr>
+<tr>
+  <td width=15%  bgcolor="#DCDCDC" ><b><span>Tipo:</span> </b></td><td width=30%  align=right><%= @service.car_type %></td>
+  <td width=70%></td>
+</tr>
+<tr height=10></tr>
+<tr>
+  <td width=15%  bgcolor="#DCDCDC" ><b><span>Modelo:</span></b></td><td width=30%  align=right> <%= @service.model %></td>
+  <td width=70%></td>
+</tr>
+<tr height=10></tr>
+<tr>
+  <td  width=15%  bgcolor="#DCDCDC" ><b><span>Color:</span> </b></td><td width=30%  align=right><%= @service.color %></td>
+  <td width=80%></td>
+</tr>
+<tr height=10></tr>
+<tr>
+  <td width=15%  bgcolor="#DCDCDC" ><b><span>Placas:</span> </b></td><td width=30%  align=right><%= @service.licence_plates %></td>
+  <td width=70%></td>
+</tr>
+    <tr height=10></tr>
+
+
+  <tr height=80></tr>
+</table>
+
+<p style="float: right; font-size: 17px; font-family: Arial;">
   <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p>
 </body>
 
