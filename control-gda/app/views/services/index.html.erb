@@ -36,7 +36,7 @@
       <div class="campo_data"><span>Fecha: </span></div>
       <div class="campo_data2"><%= s.date %></div>
       <div class="campo_data"><span>Hora: </span></div>
-      <div class="campo_data2"><%= s.hour%></div>
+      <div class="campo_data2"><%= s.hour.strftime("%I:%M%p")%></div>
       <div class="campo_data"><span>Cliente: </span></div>
       <div class="campo_data2"><%= s.client %></div>
       <div class="campo_data"><span>Operador: </span></div>

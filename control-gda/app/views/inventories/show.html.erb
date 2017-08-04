@@ -7,7 +7,7 @@
 
       <div class="detalle"><p><span>Numero de Inventario:</span> <%= @inventory.number %></p></div>
       <div class="detalle"><p><span>Fecha:</span> <%= @inventory.service.date %></p></div>
-      <div class="detalle"><p><span>Hora:</span> <%= @inventory.service.hour %></p></div>
+      <div class="detalle"><p><span>Hora:</span> <%= @inventory.service.hour.strftime("%I:%M%p") %></p></div>
       <div class="detalle"><p><span>Grua:</span> <%= @inventory.service.truck.number %></p></div>
       <div class="detalle"><p><span>Operador:</span> <%= @inventory.service.operator.name %></p></div>
       <div class="detalle"><p><span>Maniobras:</span> <%= @inventory.maneuver %></p></div>

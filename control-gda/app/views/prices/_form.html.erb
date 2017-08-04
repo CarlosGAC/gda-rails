@@ -1,0 +1,31 @@
+<% if @price.errors.any? %>
+  <div id="error_explanation">
+    <% @price.errors.full_messages.each do |msg| %>
+      <div class="alert alert-error">Error: <%= msg %></div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for(@price) do |f| %>
+
+  <div class="list2">
+    <div class="field">
+      <li>Tipo de grua:</li>
+      <li><%= f.select :category, options_for_select([['A', "A"], ['B', "B"], ['C', "C"], ['D', "D"]]) %></li>
+    </div>
+    <div class="field">
+      <li>Precio por kilometro: </li>
+      <li><%= f.text_field :km_price %></li>
+    </div>
+    <div class="field">
+      <li>Banderazo: </li>
+      <li><%= f.text_field :base_price %></li>
+    </div>
+  </div>
+  <div class="registrar-izq">
+    <div class="field">
+      <%= submit_tag("Finalizar") %>
+      <%= link_to 'Atras', routes_path %>
+    </div>
+  </div>
+<% end %>

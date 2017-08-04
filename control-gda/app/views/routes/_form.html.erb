@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="list2">
+    <div class="field">
+      <li>Nombre: </li>
+      <li><%= f.text_field :name %></li>
+    </div>
+    <div class="field">
+      <li>Kilometros: </li>
+      <li><%= f.number_field :kilometers %></li>
+    </div>
+    <div class="field">
+      <li>Casetas: </li>
+      <li><%= f.number_field :booth_price %></li>
+    </div>
+    <div class="registrar-izq">
       <div class="field">
-        <li>Nombre: </li>
-        <li><%= f.text_field :name %></li>
+        <%= submit_tag("Finalizar") %>
+        <%= link_to 'Atras', routes_path %>
       </div>
-      <div class="field">
-        <li>Kilometros: </li>
-        <li><%= f.number_field :kilometers %></li>
-      </div>
-      <div class="field">
-        <li>Casetas: </li>
-        <li><%= f.number_field :booth_price %></li>
-      </div>
-      <div class="registrar-izq">
-        <div class="field">
-          <%= submit_tag("Finalizar") %>
-          <%= link_to 'Atras', routes_path %>
-        </div>
-      </div>
+    </div>
   </div>
 <% end %>
