@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :calculators
+  resources :prices
   root 'welcome#index'
 
   resources :users

@@ -78,6 +78,8 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    mysql2 (0.4.8)
+    mysql2 (0.4.8-x86-mingw32)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-x86-mingw32)
@@ -171,6 +173,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  mysql2
   normalize-rails
   rails (= 4.2.5.1)
   ransack

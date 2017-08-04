@@ -3,7 +3,7 @@
 
     <div class="detalle"><p><span>Numero de servicio: </span>#<%=@service.id %></p></div>
     <div class="detalle"><p><span>Fecha:</span> <%= @service.date %></p></div>
-    <div class="detalle"><p><span>Hora:</span> <%= @service.hour%></p></div>
+    <div class="detalle"><p><span>Hora:</span> <%= @service.hour.strftime("%I:%M%p")%></p></div>
     <div class="detalle"><p><span>Cliente:</span> <%= @service.client %></p></div>
     <div class="detalle"><p><span>Grua:</span> <%= @service.truck.number %></p></div>
     <div class="detalle"><p><span>Operador:</span> <%= @service.operator.name %></p></div>

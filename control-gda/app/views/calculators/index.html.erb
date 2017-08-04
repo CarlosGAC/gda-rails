@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="h2-sign">Calculadora de precios</h2>
+
+<%= form_tag do %>
+<div class="list2">
+  <div class="field">
+    <div class="left">
+      <ul>
+        <li>Destino:</li>
+        <li><%= collection_select :route_price, :id, Route.all, :name, :name %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="field">
+    <div class="left">
+      <ul>
+        <li>Tipo de grua:</li>
+        <li><%= collection_select :price_category, :id, Price.all, :category, :category %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="field">
+    <div class="left">
+      <ul>
+      <li>Contiene IVA: <%= check_box_tag(:has_iva) %></li>
+    </div>
+  </div>
+  <div class="center" style="display:flex">
+    <a class="index_button" id="btn_calcular" href="#">Calcular</a>
+  </div>
+  <h2 class="h2-sign">Desglose: </h2>
+  <ul id="breakdown"></ul>
+  <h2 id="result" class="h2-sign">Precio Total: </h2>
+<% end %>
+</div>
+
+
+<%= content_tag :div, class: "prices_class", data: {prices: @prices} do %>
+<% end %>
+<%= content_tag :div, class: "routes_class", data: {routes: @routes} do %>
+<% end %>

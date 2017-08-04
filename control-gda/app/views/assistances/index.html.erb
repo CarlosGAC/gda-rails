@@ -37,8 +37,8 @@
       <div class="campo_data"><span>Nombre del afiliado: </span></div><div class="campo_data2"> <%= a.affiliate_name %></div>
       <div class="campo_data"><span>Afiliado paga: </span></div><div class="campo_data2"> <%= a.affiliate_pays %></div>
       <div class="campo_data"><span>Compañia paga: </span></div><div class="campo_data2"> <%= a.company_pays %></div>
-      <div class="campo_data"><span>Contacto: </span></div><div class="campo_data2"> <%= a.contact_time.strftime('%I:%M:%S %p') %></div>
-      <div class="campo_data"><span>Termino: </span></div><div class="campo_data2"> <%= a.end_time.strftime('%I:%M:%S %p') %></div>
+      <div class="campo_data"><span>Contacto: </span></div><div class="campo_data2"> <%= a.contact_time.strftime("%I:%M%p") %></div>
+      <div class="campo_data"><span>Termino: </span></div><div class="campo_data2"> <%= a.end_time.strftime("%I:%M%p") %></div>
       <div class="campo_data"><span>Quien cotizo: </span></div><div class="campo_data2"> <%= a.who_quoted %></div>
       <div class="campo_data"><span>Comentarios: </span></div><div class="campo_data2"> <%= a.comments %></div>
 

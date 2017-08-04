@@ -1,0 +1,24 @@
+<h2 class="h2-sign">Costes</h2>
+<div class="SN-contenedor">
+  <%= link_to 'Nuevo Coste', new_price_path %>
+</div>
+<div class="routes-contenedor">
+  <div class="list1">
+    <ul>
+      <li><span>Categoria</span></li>
+      <li><span>Precio/km</span></li>
+      <li><span>Banderazo</span></li>
+    </ul>
+  </div>
+
+    <% @prices.each do |price| %>
+      <div class="list1">
+        <ul>
+          <li><%= price.category %></li>
+          <li><%= price.km_price %></li>
+          <li><%= price.base_price %></li>
+          <li><%= link_to 'Editar', edit_price_path(price) %></li>
+        </ul>
+      </div>
+  <% end %>
+</div>
