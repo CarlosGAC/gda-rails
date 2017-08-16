@@ -4,33 +4,36 @@
 
 <%= form_tag do %>
 <div class="list2">
-  <div class="field">
-    <div class="left">
-      <ul>
-        <li>Destino:</li>
-        <li><%= collection_select :route_price, :id, Route.all, :name, :name %></li>
-      </ul>
+  <div class="calculator-contenedor">
+    <div class="field">
+        <ul>
+          <li>Destino: <%= collection_select :route_price, :id, Route.all, :name, :name %></li>
+        </ul>
     </div>
-  </div>
-  <div class="field">
-    <div class="left">
-      <ul>
-        <li>Tipo de grua:</li>
-        <li><%= collection_select :price_category, :id, Price.all, :category, :category %></li>
-      </ul>
+    <div class="field">
+        <ul>
+          <li>Tipo de grua: <%= collection_select :price_category, :id, Price.all, :category, :category %></li>
+        </ul>
     </div>
-  </div>
-  <div class="field">
-    <div class="left">
-      <ul>
-      <li>Contiene IVA: <%= check_box_tag(:has_iva) %></li>
+    <div class="field">
+        <ul>
+          <li>Contiene IVA: <%= check_box_tag(:has_iva) %></li>
+        </ul>
     </div>
-  </div>
-  <div class="center" style="display:flex">
-    <a class="index_button" id="btn_calcular" href="#">Calcular</a>
-  </div>
+      <div class="field">
+        <ul>
+          <li><a id="btn_calcular" href="#">Calcular</a></li>
+        </ul>
+
+        <!-- class="index_button" -->
+      </div>
+    </div>
+
+
   <h2 class="h2-sign">Desglose: </h2>
-  <ul id="breakdown"></ul>
+  <div class="calculator-center">
+    <ul id="breakdown"></ul>
+  </div>
   <h2 id="result" class="h2-sign">Precio Total: </h2>
 <% end %>
 </div>

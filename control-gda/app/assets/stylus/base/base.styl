@@ -113,7 +113,7 @@ span
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 
 // .new_service
 //   display: flex;
@@ -131,7 +131,7 @@ span
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   // .new_assistance
   //   display: flex;
@@ -149,7 +149,7 @@ span
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 
 .routes-contenedor
   display: flex;
@@ -162,6 +162,21 @@ span
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: column;
+
+.calculator-contenedor
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+.calculator-contenedor a
+  height: auto;
+  padding: 14 auto;
+  font-size: 1em;
+
+.calculator-center
+  display: flex;
+  justify-content: center;
+
 
 // .service_search input[type=submit], .assistance_search input[type=submit], .inventory_search input[type=submit]
 //   display: block;
@@ -299,6 +314,7 @@ span
   border-bottom: solid;
   border-bottom-color: $gray_border;
   border-width: 1px;
+  // min-height: 25px;
   // 0.2em; //antes
   //width: 150px
 
@@ -340,7 +356,7 @@ span
   //min-width: 100px;
   max-width: 300px;
   margin-bottom: 10px;
-  margin-right: 20px;
+  margin-right: 50px;
 
 .S_A > .detail
   display: flex;
@@ -385,9 +401,82 @@ span
   font-weight: 500;
 
 
-
 .h2-sign
   text-align: center;
+
+
+// Todo lo relacionado con los pdf se encuentra aqui
+.pdf-body
+  background-color: white;
+
+.pdf-header
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 200px;
+  // border: 2px solid;
+  // border-color: #5f5f5f;
+
+.pdf-header img
+  width: 200px;
+
+.pdf-h-texto
+  margin-left: 50px;
+  text-align: center;
+
+.pdf-h-texto p
+  margin: 10px 0;
+  &:first-child
+    font-size: 28px;
+  &:nth-child(2)
+    font-size: 32px;
+  &:nth-child(3)
+    font-size: 24px;
+  &:last-child
+    font-size: 22px;
+
+.pdf-container
+  // border: 2px solid;
+  // border-color: tomato;
+  width: 100%;
+
+.pdf-container p
+  font-size: 1.2em;
+  margin-top: 50px;
+  text-align: right;
+
+.pdf-container li
+  list-style: none;
+
+.pdf-sec1, .pdf-sec2
+  display: flex;
+  flex-direction: column;
+
+  // border: 1px solid;
+  // border-color: peru;
+  margin: 30px 5%;
+  width: 90%;
+
+.pdf-sec1 div, .pdf-sec2 div
+  margin-bottom: 15px;
+  width: 500px;
+
+.pdf-sec1 ul, .pdf-sec2 ul
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 0;
+
+.pdf-sec1 li, .pdf-sec2 li
+  &:first-child
+    background-color: #E6E6E6;
+    margin-right: 50px;
+    width: 200px;
+
+
+// Todo lo relacionado con el mapa se encuetra aqui
 
 
 #map-container

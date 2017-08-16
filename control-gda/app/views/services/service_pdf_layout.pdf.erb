@@ -6,14 +6,120 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= wicked_pdf_stylesheet_link_tag "pdfstyle" %>
+
+  <link rel="stylesheet" type="text/css" href="C:\Users\Dani\Documents\GitHub\gda-rails\control-gda\app\assets\stylesheets\application.css">
+  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %> -->
 </head>
 
-<body>
+<body class="pdf-body">
+
+  <div class="pdf-header">
+    <div>
+      <img src="C:\Users\Dani\Documents\GitHub\gda-rails\control-gda\app\assets\images\logo_black2.png" alt="Logo_pdf">
+    </div>
+    <div class="pdf-h-texto">
+      <p>Refacciones y adaptaciones</p>
+      <p>"García de Alba"</p>
+      <p>Servicio de grúa y arrastre</p>
+      <p>Luis Gustavo García de Alba Villa</p>
+    </div>
+  </div>
+
+  <div class="pdf-container">
+    <div class="pdf-sec1">
+      <div>
+        <ul>
+          <li>Número de servicio: </li>
+          <li>#<%=@service.id %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Fecha:</li>
+          <li><%= @service.date %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Hora:</li>
+          <li><%= @service.hour %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pdf-sec2">
+      <div>
+        <ul>
+          <li>Cliente:</li>
+          <li><%= @service.client %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Operador:</li>
+          <li><%= @service.operator.name %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Grua:</li>
+          <li><%= @service.truck.number %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Ubicacion:</li>
+          <li><%= @service.ubication %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Destino:</li>
+          <li><%= @service.destiny %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Marca:</li>
+          <li><%= @service.brand %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Tipo:</li>
+          <li><%= @service.car_type %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Modelo:</li>
+          <li><%= @service.model %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Color:</li>
+          <li><%= @service.color %></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Placas:</li>
+          <li><%= @service.licence_plates %></li>
+        </ul>
+      </div>
+      <p>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></p>
+    </div>
+  </div>
+
+<!--
   <div>
-    <table bgborder="0" width=100% style="font-family: Arial; color: #072151;">
+    <table bgborder="0" width=100% style="font-family: Arial; color: #213164;">
       <tr align=center style="font-size: 28px;">
         <td> Refacciones y adaptaciones </td>
-        <td rowspan="4"><img src="C:\Users\Oscar\Documents\GitHub\gda-rails\control-gda\app\assets\images\logo.png" width="150" height="150" align=right></td>
+        <td rowspan="4"><img src="/assets/logo-f13bfdea7b82f809199867abb70cfd82dce931d05175267a29069d6549d1c3be.png" width="150" height="150" align=right></td>
      </tr>
      <tr align=center style="font-size: 32px;">
        <td> "García de Alba" </td>
@@ -110,7 +216,8 @@
 </table>
 
 <p style="float: right; font-size: 17px; font-family: Arial;">
-  <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p>
+  <i>Recibo generado: <%= Time.zone.now.strftime('%d/%m/%Y - %I:%M:%S %p') %></i></p> -->
+
 </body>
 
 </html>

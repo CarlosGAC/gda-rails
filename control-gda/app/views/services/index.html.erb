@@ -1,6 +1,5 @@
 <h2 class="h2-sign">Servicios</h2>
 <div class="services-contenedor">
-
   <%= search_form_for @q do |f| %>
 
   <%= f.search_field :client_cont, placeholder: 'Nombre del cliente' %>
@@ -30,7 +29,8 @@
     <th><%= sort_link @q, :date, "Fecha" %></th>
   </tr>
   <% if @service.any? %>
-  <div class="resultado-assistances">
+  <div class="resultado-services">
+
     <% @service.each do |s| %>
     <div class="S_A">
       <div class="campo_data"><span>Fecha: </span></div>
